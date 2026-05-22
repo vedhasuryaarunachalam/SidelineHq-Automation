@@ -64,8 +64,7 @@ test.describe('Landing Page Tests', () => {
 
         await expect(
             page.locator('.ant-notification-notice-title')
-                .filter({ hasText: 'Product ID already exists for this sport' })
-        ).toBeVisible();
+        ).toHaveText('Product ID already exists for this sport');
     });
 
     test('Close add equipment modal', async ({ page }) => {
