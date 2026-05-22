@@ -2,79 +2,85 @@ import { test, expect } from '@playwright/test';
 import { LandingPage } from '../pages/Landingpage';
 
 test.describe('Landing Page Tests', () => {
-    
+
     test('Add equipment with all details filled', async ({ page }) => {
 
-  const landingPage = new LandingPage(page);
+        const landingPage = new LandingPage(page);
 
-  await landingPage.navigateToLandingPage();
+        await landingPage.navigateToLandingPage();
 
-  await landingPage.Addbutton();
+        await landingPage.Addbutton();
 
-  await landingPage.AddEquipment();
+        await landingPage.AddEquipment();
 
-  await landingPage.AddEquipmentDetails();
+        await landingPage.AddEquipmentDetails();
 
-  await landingPage.submitEquipment();
+        await landingPage.submitEquipment();
 
-  
-});
 
-  test('Add equipment with only category and product id', async ({ page }) => {
+    });
 
-    const landingPage = new LandingPage(page);
+    test('Add equipment with only category and product id', async ({ page }) => {
 
-    await landingPage.navigateToLandingPage();
+        const landingPage = new LandingPage(page);
 
-    await landingPage.Addbutton();
+        await landingPage.navigateToLandingPage();
 
-    await landingPage.AddEquipment();
+        await landingPage.Addbutton();
 
-    await landingPage.addOnlyMandatoryFields();
+        await landingPage.AddEquipment();
 
-    await landingPage.submitEquipment();
+        await landingPage.addOnlyMandatoryFields();
 
-    
-  });
+        await landingPage.submitEquipment();
 
-  test('Duplicate product id should show failure toast', async ({ page }) => {
 
-    const landingPage = new LandingPage(page);
+    });
 
-    await landingPage.navigateToLandingPage();
+    test('Duplicate product id should show failure toast', async ({ page }) => {
 
-    // First equipment creation
-    await landingPage.Addbutton();
-    await landingPage.AddEquipment();
-    await landingPage.addOnlyMandatoryFields();
-    await landingPage.submitEquipment();
+        const landingPage = new LandingPage(page);
 
-    // Try duplicate product ID
-    await landingPage.Addbutton();
-    await landingPage.AddEquipment();
+        await landingPage.navigateToLandingPage();
 
-    await landingPage.addDuplicateProductId();
+        // First equipment creation
+        await landingPage.Addbutton();
+        await landingPage.AddEquipment();
+        await landingPage.addOnlyMandatoryFields();
+        await landingPage.submitEquipment();
 
-    await landingPage.submitEquipment();
+        await expect(
+            page.locator('.ant-notification-notice-title')
+                .filter({ hasText: 'Equipment Added' })
+        ).toBeVisible();
 
-    await expect(
-      page.getByText(/already exists|duplicate/i)
-    ).toBeVisible();
-  });
+        // Try duplicate product ID
+        await landingPage.Addbutton();
+        await landingPage.AddEquipment();
 
-  test('Close add equipment modal', async ({ page }) => {
+        await landingPage.addDuplicateProductId();
 
-    const landingPage = new LandingPage(page);
+        await landingPage.submitEquipment();
 
-    await landingPage.navigateToLandingPage();
+        await expect(
+            page.locator('.ant-notification-notice-title')
+                .filter({ hasText: 'Product ID already exists for this sport' })
+        ).toBeVisible();
+    });
 
-    await landingPage.Addbutton();
+    test('Close add equipment modal', async ({ page }) => {
 
-    await landingPage.closeModal();
+        const landingPage = new LandingPage(page);
 
-    await expect(
-      page.getByRole('button', { name: 'ADD EQUIPMENT' })
-    ).not.toBeVisible();
-  });
+        await landingPage.navigateToLandingPage();
+
+        await landingPage.Addbutton();
+
+        await landingPage.closeModal();
+
+        await expect(
+            page.getByRole('button', { name: 'ADD EQUIPMENT' })
+        ).not.toBeVisible();
+    });
 
 });

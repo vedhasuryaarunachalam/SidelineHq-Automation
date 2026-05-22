@@ -3,15 +3,15 @@ import { TestDataUtil } from '../utils/Randomdata';
 
 export class NonSerializedPage {
   constructor(private page: Page) { }
-      equipmentData = TestDataUtil.equipmentData();
+  equipmentData = TestDataUtil.equipmentData();
 
   async navigateToLandingPage() {
-    await this.page.goto('/sports/1/equipment/serialized/available');
+    await this.page.goto('/sports/1/equipment/serialized/available', { waitUntil: 'domcontentloaded' });
   }
 
   async Addbutton() {
     await this.page
-      .locator("//span[contains(@class,'_addIconWrapper_')]")
+      .locator("//span[contains(@class,'_addIconWrapper_1vr2h_44')]")
       .click();
   }
 
@@ -47,10 +47,10 @@ export class NonSerializedPage {
     );
 
     // Verify equipment exists
-     await expect(
+    await expect(
       this.page.getByRole('cell', { name: this.equipmentData.category })
     ).toBeVisible();
-  
+
 
   }
 }

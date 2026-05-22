@@ -5,12 +5,12 @@ export class OnetimecheckoutPage {
     constructor(private page: Page) { }
     equipmentData = TestDataUtil.equipmentData();
     async navigateToLandingPage() {
-        await this.page.goto('/sports/1/equipment/serialized/available');
+        await this.page.goto('/sports/1/equipment/serialized/available', { waitUntil: 'domcontentloaded' });
     }
 
     async Addbutton() {
         await this.page
-            .locator("//span[contains(@class,'_addIconWrapper_')]")
+            .locator("//span[contains(@class,'_addIconWrapper_1vr2h_44')]")
             .click();
     }
 
@@ -42,15 +42,15 @@ export class OnetimecheckoutPage {
         await this.page
             .getByRole('button', { name: 'ADD EQUIPMENT' })
             .click();
-         await this.page.goto(
-      'https://marine-turquoise-coyote.rootquotient.revolte.io/sports/1/equipment/one-time-checkout'
-    );
+        await this.page.goto(
+            'https://marine-turquoise-coyote.rootquotient.revolte.io/sports/1/equipment/one-time-checkout'
+        );
 
-    // Verify equipment exists
-     await expect(
-      this.page.getByRole('cell', { name: this.equipmentData.category })
-    ).toBeVisible();
-  
+        // Verify equipment exists
+        await expect(
+            this.page.getByRole('cell', { name: this.equipmentData.category })
+        ).toBeVisible();
+
 
     }
 

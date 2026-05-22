@@ -23,9 +23,9 @@ export class TestDataUtil {
     static equipmentData() {
         return {
             category: `Helmet${this.randomText(5)}`,
-            productId: `PID-${this.randomAlphaNumeric(8)}`,
-            brand: `Nike-${this.randomText(4)}`,
-            style: `AirMax-${this.randomText(6)}`
+            productId: `${this.randomAlphaNumeric(8)}`,
+            brand: `${this.randomText(4)}`,
+            style: `${this.randomText(6)}`
         };
     }
 }

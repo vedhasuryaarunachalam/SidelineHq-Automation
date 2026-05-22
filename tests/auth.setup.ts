@@ -13,4 +13,4 @@ setup('authenticate', async ({ page }) => {
     await page.context().storageState({
         path: 'auth.json'
     });
-});
+}); 

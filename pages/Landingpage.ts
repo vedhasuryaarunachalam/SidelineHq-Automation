@@ -8,13 +8,16 @@ export class LandingPage {
     equipmentData = TestDataUtil.equipmentData();
 
     async navigateToLandingPage() {
-        await this.page.goto('/sports/1/equipment/serialized/available');
+        await this.page.goto('/sports/1/equipment/serialized/available', { waitUntil: 'domcontentloaded' });
     }
 
     async Addbutton() {
+         await this.page
+    .locator('.ant-notification-notice')
+    .waitFor({ state: 'hidden' });
         await this.page
-            .locator("//span[contains(@class,'_addIconWrapper_')]")
-            .click();
+            .locator("//span[contains(@class,'_addIconWrapper_1vr2h_44')]")
+            .click({timeout: 10000});
     }
 
     async AddEquipment() {
@@ -73,7 +76,7 @@ export class LandingPage {
         await this.page
             .getByRole('button', { name: 'ADD EQUIPMENT' })
             .click();
-        
+
     }
 
     async closeModal() {

@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/Loginpage';
 import loginData from '../test-data/login.json';
+test.use({
+  storageState: { cookies: [], origins: [] },
+});
 test.describe('Login Tests', () => {
     let loginPage: LoginPage;
 
@@ -12,6 +15,7 @@ test.describe('Login Tests', () => {
     test('Login with Valid creds', async ({ page }) => {
         await loginPage.login(loginData.validUser.username, loginData.validUser.password);
         await expect(page).toHaveURL(loginData.validUser.Landingpage);
+        await expect(page).toHaveURL(/\/sports/);
     });
 
     test('Login with Invalid Password', async ({ page }) => {
@@ -24,5 +28,5 @@ test.describe('Login Tests', () => {
         await expect(page).toHaveURL(loginData.invalidUser.check);
     });
 
-    
+
 });

@@ -21,7 +21,7 @@ export class LoginPage {
     }
 
     async navigateToLogin() {
-        await this.page.goto('/auth/login');
+        await this.page.goto('/auth/login', { waitUntil: 'domcontentloaded' });
 
     }
 
