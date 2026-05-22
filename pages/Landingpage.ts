@@ -12,12 +12,25 @@ export class LandingPage {
     }
 
     async Addbutton() {
-        await this.page
-        .locator('.ant-notification')
-        .waitFor({ state: 'hidden',timeout: 10000  });
-        await this.page
-            .locator("//span[contains(@class,'_addIconWrapper_1vr2h_44')]")
-            .click();
+        const notificationClose = this.page
+            .locator('.ant-notification-notice .ant-notification-close')
+            .first();
+
+        if (await notificationClose.isVisible().catch(() => false)) {
+            await notificationClose.click();
+        }
+        const addButton = this.page
+            .locator('[class*="addIconWrapper"]')
+            .first();
+
+        await addButton.waitFor({
+            state: 'visible'
+        });
+
+        await addButton.click({
+            timeout: 10000
+        });
+
     }
 
     async AddEquipment() {

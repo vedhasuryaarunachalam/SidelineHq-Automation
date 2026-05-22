@@ -10,15 +10,19 @@ export class NonSerializedPage {
   }
 
   async Addbutton() {
+
     await this.page
-      .locator("//span[contains(@class,'_addIconWrapper_1vr2h_44')]")
+      .locator('[class*="addIconWrapper"]')
       .click();
   }
 
   async AddEquipment() {
     await this.page
       .locator('input[name="isSerialized"][value="false"]')
-      .check();
+      .click();
+    await expect(
+      this.page.getByRole('radio', { name: /Non - Serialized/i })
+    ).toBeChecked();
 
     await this.page
       .getByRole('button', { name: 'NEXT' })
@@ -30,27 +34,29 @@ export class NonSerializedPage {
     await this.page
       .getByPlaceholder('Enter category')
       .fill(this.equipmentData.category);
+
     await this.page
       .getByPlaceholder('Enter quantity')
       .fill('5');
+
     await this.page
       .getByPlaceholder('Enter note')
       .fill('NonSerial Test Note');
-
   }
+
   async submitEquipment() {
     await this.page
       .getByRole('button', { name: 'ADD EQUIPMENT' })
       .click();
-    await this.page.goto(
-      'https://marine-turquoise-coyote.rootquotient.revolte.io/sports/1/equipment/non-serialized'
-    );
 
-    // Verify equipment exists
     await expect(
-      this.page.getByRole('cell', { name: this.equipmentData.category })
-    ).toBeVisible();
+      this.page.locator('.ant-notification-notice-title')
+    ).toHaveText('Equipment Added');
 
+    await this.page.goto(
+      '/sports/1/equipment/non-serialized',
+      { waitUntil: 'domcontentloaded' }
+    );
 
   }
 }

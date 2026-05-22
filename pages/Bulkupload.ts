@@ -14,56 +14,64 @@ export class BulkUploadPage {
 
     async uploadExcelFile() {
 
-        await this.page
-            .locator('input[type="file"]')
-            .setInputFiles('test-data/equipments-template.xlsx');
+            const filePath = 'test-data/equipments-template.xlsx';
+
+    // WebKit: use locator-based file input approach
+    const fileInput = this.page.locator('input[type="file"]');
+
+    const isWebKit = this.page.context().browser()?.browserType().name() === 'webkit';
+
+    if (isWebKit) {
+        // In WebKit, directly set files on the hidden input without triggering filechooser
+        await this.page.getByRole('button', { name: 'UPLOAD XLS FILE' }).click();
+    await fileInput.waitFor({ state: 'attached', timeout: 10000 });
+    await fileInput.setInputFiles(filePath);
+    } else {
+        const [fileChooser] = await Promise.all([
+            this.page.waitForEvent('filechooser'),
+            this.page.getByRole('button', {
+                name: 'UPLOAD XLS FILE'
+            }).click()
+        ]);
+
+        await fileChooser.setFiles(filePath);
+    }
+
+
     }
 
     async submitUpload() {
-        await this.page
-            .getByRole('button', { name: 'Upload Equipment' })
-            .click();
+        const uploadButton = this.page.getByRole('button', {
+            name: /upload equipment/i
+        });
+
+        await expect(uploadButton).toBeVisible({ timeout: 10000 });
+
+        await uploadButton.click();
 
 
     }
     async verifyUploadResult() {
 
-        const notification = this.page.locator(
-            '.ant-notification-notice'
-        ).last();
+        const notification = this.page.locator('.ant-notification-notice').first();
 
-        await expect(notification).toBeVisible();
+        await expect(notification).toBeVisible({ timeout: 15000 });
 
-        const notificationText = await notification.textContent();
+        const text = await notification.innerText();
 
-        // Success case
-        if (
-            notificationText?.includes(
-                'Bulk import queued successfully'
-            )
-        ) {
-
+        if (text.includes('Bulk import queued successfully')) {
             await expect(notification).toContainText(
                 'Bulk import queued successfully'
             );
-
             console.log('Bulk upload successful');
-        }
-
-        // Failure case
-        else if (
-            notificationText?.includes('Upload Failed')
-        ) {
-
+        } else if (text.includes('Upload Failed')) {
             await expect(notification).toContainText(
-                'Upload Failed'
+                '0 uploaded, 15 failed'
             );
 
-            await expect(notification).toContainText(
-                'failed'
-            );
-
-            console.log('Bulk upload failed');
+            throw new Error(`Bulk upload failed: ${text}`);
+        } else {
+            throw new Error(`Unexpected notification: ${text}`);
         }
     }
 }

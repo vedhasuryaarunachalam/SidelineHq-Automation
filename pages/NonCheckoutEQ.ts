@@ -16,44 +16,36 @@ export class NonSerializedCheckoutPage {
 
     async checkoutEquipmentToMultiplePlayers() {
 
-        await this.page
-            .getByRole('button', { name: 'Check Out' })
-            .first()
-            .click();
+    await this.page
+        .getByRole('button', { name: 'Check Out' })
+        .first()
+        .click();
 
-        const dialog = this.page.getByRole('dialog', {
-            name: 'Check-Out Equipment'
-        });
+    const dialog = this.page.getByRole('dialog', {
+        name: 'Check-Out Equipment'
+    });
 
-        const combobox = dialog.getByRole('combobox');
+    const combobox = dialog.getByRole('combobox');
 
-        await combobox.click();
+    await combobox.click();
 
-        const options = this.page.locator(
-            '.ant-select-dropdown:not(.ant-select-dropdown-hidden) .ant-select-item-option'
-        );
+    const options = this.page.locator(
+        '.ant-select-dropdown:not(.ant-select-dropdown-hidden) ' +
+        '.ant-select-item-option:not(.ant-select-item-option-selected)'
+    );
 
-        // select first 4 players
-        for (let i = 0; i < 4; i++) {
+    // select first 4 available options
+    for (let i = 0; i < 4; i++) {
 
-            const option = options.nth(i);
+        await expect(options.first()).toBeVisible();
 
-            await expect(option).toBeVisible();
-
-            await option.click();
-        }
-
-        // close dropdown
-        await this.page.keyboard.press('Escape');
-
-        await expect(
-            this.page.locator('.ant-select-dropdown')
-        ).toBeHidden();
-
-        const checkoutNowBtn = dialog.getByRole('button', {
-            name: 'CHECK OUT NOW'
-        });
-
-        await checkoutNowBtn.click();
+        await options.first().click();
     }
+
+    await this.page.keyboard.press('Escape');
+
+    await dialog
+        .getByRole('button', { name: 'CHECK OUT NOW' })
+        .click();
+}
 }

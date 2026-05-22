@@ -13,7 +13,7 @@ export class LoginPage {
 
         this.usernameInput = page.locator('input[id="email"]');
         this.passwordInput = page.locator('input[id="password"]');
-        this.loginButton = page.locator('button[type="submit"]').nth(0);
+        this.loginButton = page.getByRole('button', { name: 'LOGIN' }); 
         this.emailrequired = page.getByText('Email is required', { exact: true });
         this.passwordrequired = page.getByText('Password is required', { exact: true });
 

@@ -23,7 +23,7 @@ export class TestDataUtil {
     static equipmentData() {
         return {
             category: `Helmet${this.randomText(5)}`,
-            productId: `${this.randomAlphaNumeric(8)}`,
+            productId: `${this.randomAlphaNumeric(4)}`,
             brand: `${this.randomText(4)}`,
             style: `${this.randomText(6)}`
         };

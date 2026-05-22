@@ -30,7 +30,7 @@ export default defineConfig({
       args: ['--start-maximized'],
     },
     /* Base URL to use in actions like `await page.goto('')`. */
-     baseURL: 'https://marine-turquoise-coyote.rootquotient.revolte.io/',
+    baseURL: 'https://marine-turquoise-coyote.rootquotient.revolte.io/',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -39,47 +39,76 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-    name: 'setup',
-    testMatch: /auth\.setup\.ts/,
-  },
+      name: 'setup-chromium',
+      testMatch: /auth\.setup\.ts/,
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+    },
+
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'],
-        storageState: 'auth.json',
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: 'playwright/.auth/chromium.json',
       },
-      dependencies: ['setup'],
+      dependencies: ['setup-chromium'],
+    },
+
+    {
+      name: 'setup-firefox',
+      testMatch: /auth\.setup\.ts/,
+      use: {
+        ...devices['Desktop Firefox'],
+      },
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: {
+        ...devices['Desktop Firefox'],
+        storageState: 'playwright/.auth/firefox.json',
+      },
+      dependencies: ['setup-firefox'],
+    },
+
+    {
+      name: 'setup-webkit',
+      testMatch: /auth\.setup\.ts/,
+      use: {
+        ...devices['Desktop Safari'],
+      },
     },
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: {
+        ...devices['Desktop Safari'],
+        storageState: 'playwright/.auth/webkit.json',
+      },
+      dependencies: ['setup-webkit'],
     },
+  ]
+  /* Test against mobile viewports. */
+  // {
+  //   name: 'Mobile Chrome',
+  //   use: { ...devices['Pixel 5'] },
+  // },
+  // {
+  //   name: 'Mobile Safari',
+  //   use: { ...devices['iPhone 12'] },
+  // },
 
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
-  ],
+  /* Test against branded browsers. */
+  // {
+  //   name: 'Microsoft Edge',
+  //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
+  // },
+  // {
+  //   name: 'Google Chrome',
+  //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+  // },
+  ,
 
   /* Run your local dev server before starting the tests */
   // webServer: {

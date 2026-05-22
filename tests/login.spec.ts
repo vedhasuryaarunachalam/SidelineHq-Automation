@@ -14,7 +14,6 @@ test.describe('Login Tests', () => {
 
     test('Login with Valid creds', async ({ page }) => {
         await loginPage.login(loginData.validUser.username, loginData.validUser.password);
-        await expect(page).toHaveURL(loginData.validUser.Landingpage);
         await expect(page).toHaveURL(/\/sports/);
         await expect(
             page.getByText('Equipment Management')

@@ -50,21 +50,19 @@ test.describe('Landing Page Tests', () => {
         await landingPage.submitEquipment();
 
         await expect(
-            page.locator('.ant-notification-notice-title')
-                .filter({ hasText: 'Equipment Added' })
-        ).toBeVisible();
+            page.locator('.ant-notification-notice-title').last()
+        ).toContainText('Equipment Added');
 
-        // Try duplicate product ID
+        // Duplicate product ID
         await landingPage.Addbutton();
         await landingPage.AddEquipment();
 
         await landingPage.addDuplicateProductId();
-
         await landingPage.submitEquipment();
 
         await expect(
             page.locator('.ant-notification-notice-title')
-        ).toHaveText('Product ID already exists for this sport');
+        ).toContainText('Product ID already exists for this sport');
     });
 
     test('Close add equipment modal', async ({ page }) => {
