@@ -14,28 +14,28 @@ export class BulkUploadPage {
 
     async uploadExcelFile() {
 
-            const filePath = 'test-data/equipments-template.xlsx';
+        const filePath = 'test-data/equipments-template.xlsx';
 
-    // WebKit: use locator-based file input approach
-    const fileInput = this.page.locator('input[type="file"]');
+        // WebKit: use locator-based file input approach
+        const fileInput = this.page.locator('input[type="file"]');
 
-    const isWebKit = this.page.context().browser()?.browserType().name() === 'webkit';
+        const isWebKit = this.page.context().browser()?.browserType().name() === 'webkit';
 
-    if (isWebKit) {
-        // In WebKit, directly set files on the hidden input without triggering filechooser
-        await this.page.getByRole('button', { name: 'UPLOAD XLS FILE' }).click();
-    await fileInput.waitFor({ state: 'attached', timeout: 10000 });
-    await fileInput.setInputFiles(filePath);
-    } else {
-        const [fileChooser] = await Promise.all([
-            this.page.waitForEvent('filechooser'),
-            this.page.getByRole('button', {
-                name: 'UPLOAD XLS FILE'
-            }).click()
-        ]);
+        if (isWebKit) {
+            // In WebKit, directly set files on the hidden input without triggering filechooser
+            await this.page.getByRole('button', { name: 'UPLOAD XLS FILE' }).click();
+            await fileInput.waitFor({ state: 'attached', timeout: 10000 });
+            await fileInput.setInputFiles(filePath);
+        } else {
+            const [fileChooser] = await Promise.all([
+                this.page.waitForEvent('filechooser'),
+                this.page.getByRole('button', {
+                    name: 'UPLOAD XLS FILE'
+                }).click()
+            ]);
 
-        await fileChooser.setFiles(filePath);
-    }
+            await fileChooser.setFiles(filePath);
+        }
 
 
     }

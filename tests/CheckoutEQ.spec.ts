@@ -19,5 +19,5 @@ test.describe('Equipment Checkout Tests', () => {
 
         await checkoutPage.verifyEquipmentAssignedToast();
     });
-   
+
 });

@@ -1,15 +1,15 @@
 export class TestDataUtil {
 
     static randomText(length: number) {
-  const chars = 'abcdefghijklmnopqrstuvwxyz';
-  let result = '';
+        const chars = 'abcdefghijklmnopqrstuvwxyz';
+        let result = '';
 
-  for (let i = 0; i < length; i++) {
-    result += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
+        for (let i = 0; i < length; i++) {
+            result += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
 
-  return result;
-}
+        return result;
+    }
 
     static randomAlphaNumeric(length: number): string {
         const chars =
