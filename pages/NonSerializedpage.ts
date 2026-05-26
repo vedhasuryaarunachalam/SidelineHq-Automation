@@ -57,7 +57,7 @@ export class NonSerializedPage extends CommonPage {
 
     // Wait for table to load
     await expect(
-      this.page.getByRole('tabpanel')
+      this.page.getByRole('tabpanel',{ name: 'Non-Serialized' })
     ).toBeVisible();
 
     const equipmentRow = this.page
