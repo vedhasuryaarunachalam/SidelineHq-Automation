@@ -63,8 +63,7 @@ jobs:
             test-results.json
           retention-days: 30
 
-      # Generate PR comment summary
-      - name: Generate Test Summary
+         - name: Generate Test Summary
         if: always()
         run: |
           node <<'EOF'
@@ -83,7 +82,6 @@ jobs:
           let failedTests = [];
 
           try {
-
             const data = JSON.parse(
               fs.readFileSync('test-results.json', 'utf8')
             );
@@ -91,11 +89,9 @@ jobs:
             const suites = data.suites || [];
 
             function extractTests(suites) {
-
               for (const suite of suites) {
 
                 if (suite.specs) {
-
                   for (const spec of suite.specs) {
 
                     for (const test of spec.tests) {
@@ -145,15 +141,15 @@ jobs:
             extractTests(suites);
 
             summary += `
-| Metric | Count |
-|---|---|
-| ✅ Passed | ${stats.passed} |
-| ❌ Failed | ${stats.failed} |
-| ⏭️ Skipped | ${stats.skipped} |
-| ⏰ Timed Out | ${stats.timedOut} |
-| 🧪 Total | ${stats.total} |
+          | Metric | Count |
+          |---|---|
+          | ✅ Passed | ${stats.passed} |
+          | ❌ Failed | ${stats.failed} |
+          | ⏭️ Skipped | ${stats.skipped} |
+          | ⏰ Timed Out | ${stats.timedOut} |
+          | 🧪 Total | ${stats.total} |
 
-`;
+          `;
 
             if (failedTests.length > 0) {
 
@@ -173,7 +169,6 @@ jobs:
               }
 
               if (failedTests.length > 10) {
-
                 summary += `...and ${
                   failedTests.length - 10
                 } more failed tests.\n`;
@@ -185,10 +180,10 @@ jobs:
             }
 
             summary += `
-## 📄 Playwright Report
+          ## 📄 Playwright Report
 
-Download the \`playwright-report\` artifact from this workflow run.
-`;
+          Download the \`playwright-report\` artifact from this workflow run.
+          `;
 
             fs.writeFileSync('pr-comment.md', summary);
 
