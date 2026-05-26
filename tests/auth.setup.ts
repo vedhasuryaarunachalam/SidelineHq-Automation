@@ -9,7 +9,7 @@ setup('authenticate', async ({ page, browserName }) => {
   await page.locator('#password').fill('Pass@123');
 
   await Promise.all([
-    page.waitForURL('**/sports/1/equipment/serialized/available'),
+    page.waitForURL('https://marine-turquoise-coyote.rootquotient.revolte.io/sports/1/equipment/serialized/available'),
     page.locator('button[type="submit"]').click(),
   ]);
 
