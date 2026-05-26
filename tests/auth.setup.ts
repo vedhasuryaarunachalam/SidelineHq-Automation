@@ -10,7 +10,7 @@ setup('authenticate', async ({ page, browserName }) => {
 
   await Promise.all([
     page.waitForURL('https://marine-turquoise-coyote.rootquotient.revolte.io/sports/1/equipment/serialized/available'),
-    page.locator('button[type="submit"]').click(),
+    page.getByRole('button', { name: 'Login' }).click(),
   ]);
 
   await expect(page).toHaveURL(

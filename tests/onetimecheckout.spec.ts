@@ -7,6 +7,6 @@ test.describe('One-Time Checkout Equipment Tests', () => {
     await onetimecheckoutPage.Addbutton();
     await onetimecheckoutPage.AddEquipment();
     await onetimecheckoutPage.AddEquipmentDetails();
-    await onetimecheckoutPage.submitEquipment();
+    await onetimecheckoutPage.CheckEquipment();
   });
 });

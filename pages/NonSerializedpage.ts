@@ -1,19 +1,22 @@
 import { expect, Page } from '@playwright/test';
 import { TestDataUtil } from '../utils/Randomdata';
+import { CommonPage } from './CommonObj';
 
-export class NonSerializedPage {
-  constructor(private page: Page) { }
+
+export class NonSerializedPage extends CommonPage {
+
+  constructor(page: Page) {
+    super(page);
+  }
+
   equipmentData = TestDataUtil.equipmentData();
 
   async navigateToLandingPage() {
-    await this.page.goto('/sports/1/equipment/serialized/available', { waitUntil: 'domcontentloaded' });
+    await this.navigate();
   }
 
   async Addbutton() {
-
-    await this.page
-      .locator('[class*="addIconWrapper"]')
-      .click();
+    await this.clickAddButton();
   }
 
   async AddEquipment() {
@@ -42,21 +45,31 @@ export class NonSerializedPage {
     await this.page
       .getByPlaceholder('Enter note')
       .fill('NonSerial Test Note');
+    await this.page.getByText('ADD EQUIPMENT').click();
+    await this.SuccessToast();
   }
 
-  async submitEquipment() {
+  async CheckEquipment() {
+
     await this.page
-      .getByRole('button', { name: 'ADD EQUIPMENT' })
+      .getByRole('tab', { name: 'Non-Serialized' })
       .click();
 
+    // Wait for table to load
     await expect(
-      this.page.locator('.ant-notification-notice-title')
-    ).toHaveText('Equipment Added');
+      this.page.getByRole('tabpanel')
+    ).toBeVisible();
 
-    await this.page.goto(
-      '/sports/1/equipment/non-serialized',
-      { waitUntil: 'domcontentloaded' }
+    const equipmentRow = this.page
+      .getByRole('row')
+      .filter({
+        hasText: this.equipmentData.category
+      });
+
+    await expect(equipmentRow).toBeVisible();
+
+    console.log(
+      'Equipment "${this.equipmentData.category}" is visible in Non-Serialized table'
     );
-
   }
 }

@@ -1,9 +1,14 @@
 import { expect, Page } from '@playwright/test';
 import { TestDataUtil } from '../utils/Randomdata';
+import { CommonPage } from './CommonObj';
 
-export class LandingPage {
 
-    constructor(private page: Page) { }
+export class LandingPage extends CommonPage {
+
+    constructor(page: Page) {
+        super(page);
+    }
+
 
     equipmentData = TestDataUtil.equipmentData();
     async waitForNotificationsToClear() {
@@ -38,29 +43,13 @@ export class LandingPage {
 
 
     async navigateToLandingPage() {
-        await this.page.goto(
-            '/sports/1/equipment/serialized/available',
-            {
-                waitUntil: 'domcontentloaded'
-            }
-        );
-
-        await this.waitForNotificationsToClear();
+        await this.navigate();
     }
 
-    async Addbutton() {
+   async Addbutton() {
+    await this.clickAddButton();
+  }
 
-        await this.waitForNotificationsToClear();
-
-        const addButton = this.page
-            .locator('[class*="addIconWrapper"]')
-            .first();
-
-        await expect(addButton).toBeVisible();
-
-        await addButton.click({ timeout: 50000 });
-    }
-    
 
     async AddEquipment() {
         await this.page.getByRole('radio').first().click();
@@ -87,6 +76,25 @@ export class LandingPage {
         await this.page
             .getByPlaceholder('Enter style')
             .fill(this.equipmentData.style);
+        await this.page.locator('div[name="size"]').click();
+
+        await this.page
+            .locator('.ant-select-item-option-content').getByText('L', { exact: true })
+            .click();
+        await this.page
+            .getByPlaceholder('Enter Location')
+            .fill('Room A');
+        await this.page
+            .getByPlaceholder('Enter year')
+            .fill('2026');
+        await this.page.getByPlaceholder('Enter date').fill('2026-05-26');
+        await this.page.getByPlaceholder('Enter Price').fill('102');
+        await this.page.getByPlaceholder('Enter note').fill('Test Note');
+        await this.page.getByText('ADD EQUIPMENT').click();
+        await this.SuccessToast();
+       
+
+
     }
 
 

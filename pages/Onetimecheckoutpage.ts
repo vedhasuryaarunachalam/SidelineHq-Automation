@@ -1,17 +1,20 @@
 import { expect, Page } from '@playwright/test';
 import { TestDataUtil } from '../utils/Randomdata';
+import { CommonPage } from './CommonObj';
 
-export class OnetimecheckoutPage {
-    constructor(private page: Page) { }
+export class OnetimecheckoutPage extends CommonPage {
+
+    constructor(page: Page) {
+        super(page);
+    }
+
     equipmentData = TestDataUtil.equipmentData();
     async navigateToLandingPage() {
-        await this.page.goto('/sports/1/equipment/serialized/available', { waitUntil: 'domcontentloaded' });
+        await this.navigate();
     }
 
     async Addbutton() {
-        await this.page
-            .locator('[class*="addIconWrapper"]')
-            .click();
+        await this.clickAddButton();
     }
 
     async AddEquipment() {
@@ -24,7 +27,7 @@ export class OnetimecheckoutPage {
             .click();
 
     }
-    async AddEquipmentDetails() {
+    async AddEquipmentDetails() {   
 
         await this.page
             .getByPlaceholder('Enter category')
@@ -35,24 +38,33 @@ export class OnetimecheckoutPage {
         await this.page
             .locator('input[name="isOneTimeCheckout"]')
             .check();
+        await this.page.getByText('ADD EQUIPMENT').click();
+        await this.SuccessToast();
 
 
     }
-    async submitEquipment() {
-        await this.page
-            .getByRole('button', { name: 'ADD EQUIPMENT' })
-            .click();
-        await expect(
-            this.page.locator('.ant-notification-notice-title')
-                .filter({ hasText: 'Equipment Added' })
-        ).toBeVisible({ timeout: 10000 });
+     async CheckEquipment() {
 
-        await this.page.goto(
-            'https://marine-turquoise-coyote.rootquotient.revolte.io/sports/1/equipment/one-time-checkout'
-        );
+    await this.page
+      .getByRole('tab', { name: 'One-Time Checkout' })
+      .click();
 
+    // Wait for table to load
+    await expect(
+      this.page.getByRole('tabpanel',{ name: 'One-Time Checkout' })
+    ).toBeVisible();
 
+    const equipmentRow = this.page
+      .getByRole('row')
+      .filter({
+        hasText: this.equipmentData.category
+      });
 
-    }
+    await expect(equipmentRow).toBeVisible();
+
+    console.log(
+      'Equipment "${this.equipmentData.category}" is visible in One-Time Checkout table'
+    );
+  }
 
 }
