@@ -60,6 +60,7 @@ export class NonSerializedPage extends CommonPage {
       this.page.getByRole('tabpanel',{ name: 'Non-Serialized' })
     ).toBeVisible();
 
+    
     const equipmentRow = this.page
       .getByRole('row')
       .filter({
