@@ -4,7 +4,7 @@ setup('authenticate', async ({ page, browserName }) => {
 
   await page.goto('/login');
 
-  await page.locator('#email').fill('vedhasurya018@gmail.com');
+  await page.locator('#email').fill('yes@yopmail.com');
 
   await page.locator('#password').fill('Pass@123');
 

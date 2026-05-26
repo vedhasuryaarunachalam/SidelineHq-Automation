@@ -18,10 +18,11 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
+      # Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Node + npm cache
+      # Setup Node.js + npm cache
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -41,18 +42,17 @@ jobs:
           restore-keys: |
             playwright-${{ runner.os }}-
 
-      # Install browsers
+      # Install Playwright browsers
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      # Run tests in parallel
-      - name: Run Playwright tests
+      # Run Playwright tests
+      - name: Run Playwright Tests
         id: playwright
-        run: |
-          npx playwright test --workers=4 --reporter=json,html > test-results.json
+        run: npx playwright test --workers=4
         continue-on-error: true
 
-      # Upload HTML report
+      # Upload Playwright HTML report
       - name: Upload Playwright Report
         if: always()
         uses: actions/upload-artifact@v4
@@ -63,34 +63,74 @@ jobs:
             test-results.json
           retention-days: 30
 
-      # Generate failure summary
+      # Generate PR comment summary
       - name: Generate Test Summary
         if: always()
-        id: summary
         run: |
           node <<'EOF'
           const fs = require('fs');
 
-          let summary = '## ✅ Playwright Test Summary\n\n';
+          let summary = `# 🎭 Playwright Test Summary\n\n`;
+
+          let stats = {
+            total: 0,
+            passed: 0,
+            failed: 0,
+            skipped: 0,
+            timedOut: 0
+          };
+
           let failedTests = [];
 
           try {
-            const data = JSON.parse(fs.readFileSync('test-results.json', 'utf8'));
+
+            const data = JSON.parse(
+              fs.readFileSync('test-results.json', 'utf8')
+            );
 
             const suites = data.suites || [];
 
             function extractTests(suites) {
-              for (const suite of suites) {
-                if (suite.specs) {
-                  for (const spec of suite.specs) {
-                    for (const test of spec.tests) {
-                      const result = test.results?.[0];
 
-                      if (result?.status === 'failed') {
-                        failedTests.push({
-                          title: spec.title,
-                          error: result.error?.message || 'Unknown error'
-                        });
+              for (const suite of suites) {
+
+                if (suite.specs) {
+
+                  for (const spec of suite.specs) {
+
+                    for (const test of spec.tests) {
+
+                      stats.total++;
+
+                      const result = test.results?.[0];
+                      const status = result?.status;
+
+                      switch (status) {
+
+                        case 'passed':
+                          stats.passed++;
+                          break;
+
+                        case 'failed':
+                          stats.failed++;
+
+                          failedTests.push({
+                            title: spec.title,
+                            project: test.projectName || 'unknown',
+                            error:
+                              result.error?.message ||
+                              'Unknown error'
+                          });
+
+                          break;
+
+                        case 'skipped':
+                          stats.skipped++;
+                          break;
+
+                        case 'timedOut':
+                          stats.timedOut++;
+                          break;
                       }
                     }
                   }
@@ -104,33 +144,64 @@ jobs:
 
             extractTests(suites);
 
-            if (failedTests.length === 0) {
-              summary += '### 🎉 All tests passed\n';
-            } else {
-              summary += `### ❌ Failed Tests (${failedTests.length})\n\n`;
+            summary += `
+| Metric | Count |
+|---|---|
+| ✅ Passed | ${stats.passed} |
+| ❌ Failed | ${stats.failed} |
+| ⏭️ Skipped | ${stats.skipped} |
+| ⏰ Timed Out | ${stats.timedOut} |
+| 🧪 Total | ${stats.total} |
+
+`;
+
+            if (failedTests.length > 0) {
+
+              summary += `## ❌ Failed Tests\n\n`;
 
               for (const test of failedTests.slice(0, 10)) {
-                summary += `- **${test.title}**\n`;
-                summary += `  \`\`\`\n`;
-                summary += `${test.error.substring(0, 300)}\n`;
-                summary += `  \`\`\`\n\n`;
+
+                summary += `### ${test.title}\n\n`;
+
+                summary += `**Project:** ${test.project}\n\n`;
+
+                summary += '```text\n';
+
+                summary += test.error.substring(0, 500);
+
+                summary += '\n```\n\n';
               }
 
               if (failedTests.length > 10) {
-                summary += `...and ${failedTests.length - 10} more failed tests.\n`;
+
+                summary += `...and ${
+                  failedTests.length - 10
+                } more failed tests.\n`;
               }
+
+            } else {
+
+              summary += `## 🎉 All tests passed\n`;
             }
 
+            summary += `
+## 📄 Playwright Report
+
+Download the \`playwright-report\` artifact from this workflow run.
+`;
+
             fs.writeFileSync('pr-comment.md', summary);
+
           } catch (e) {
+
             fs.writeFileSync(
               'pr-comment.md',
-              '❌ Failed to parse Playwright test results.'
+              `❌ Failed to parse Playwright results.\n\n${e.message}`
             );
           }
           EOF
 
-      # Comment PR with summary
+      # Comment on PR
       - name: Comment PR with Test Summary
         if: always()
         uses: actions/github-script@v7
@@ -138,7 +209,11 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
-            const body = fs.readFileSync('pr-comment.md', 'utf8');
+
+            const body = fs.readFileSync(
+              'pr-comment.md',
+              'utf8'
+            );
 
             github.rest.issues.createComment({
               owner: context.repo.owner,
