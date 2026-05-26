@@ -6,35 +6,51 @@ export class LandingPage {
     constructor(private page: Page) { }
 
     equipmentData = TestDataUtil.equipmentData();
-
-    async navigateToLandingPage() {
-        await this.page.goto('/sports/1/equipment/serialized/available', {
-            waitUntil: 'domcontentloaded'
-        });
-
-        await this.page
-            .locator('.ant-notification-notice')
-            .waitFor({ state: 'hidden', timeout: 10000 })
-            .catch(() => { });
-    }
-
-    async Addbutton() {
-        await this.page
-            .locator('.ant-notification-notice')
-            .first()
-            .waitFor({ state: 'hidden', timeout: 10000 })
-            .catch(() => { });
+    async waitForNotificationsToClear() {
 
         const notification = this.page.locator('.ant-notification-notice');
+
+        await notification
+            .first()
+            .waitFor({
+                state: 'hidden',
+                timeout: 10000
+            })
+            .catch(() => { });
+
         if (await notification.count() > 0) {
+
             await notification
                 .locator('.ant-notification-notice-close')
                 .first()
                 .click()
                 .catch(() => { });
 
-            await notification.first().waitFor({ state: 'hidden', timeout: 5000 }).catch(() => { });
+            await notification
+                .first()
+                .waitFor({
+                    state: 'hidden',
+                    timeout: 5000
+                })
+                .catch(() => { });
         }
+    }
+
+
+    async navigateToLandingPage() {
+        await this.page.goto(
+            '/sports/1/equipment/serialized/available',
+            {
+                waitUntil: 'domcontentloaded'
+            }
+        );
+
+        await this.waitForNotificationsToClear();
+    }
+
+    async Addbutton() {
+
+        await this.waitForNotificationsToClear();
 
         const addButton = this.page
             .locator('[class*="addIconWrapper"]')
@@ -44,6 +60,7 @@ export class LandingPage {
 
         await addButton.click({ timeout: 50000 });
     }
+    
 
     async AddEquipment() {
         await this.page.getByRole('radio').first().click();
