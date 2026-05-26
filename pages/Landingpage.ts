@@ -12,7 +12,6 @@ export class LandingPage {
             waitUntil: 'domcontentloaded'
         });
 
-        // Wait for any post-navigation notifications to clear
         await this.page
             .locator('.ant-notification-notice')
             .waitFor({ state: 'hidden', timeout: 10000 })
@@ -20,14 +19,12 @@ export class LandingPage {
     }
 
     async Addbutton() {
-        // Wait for ALL notifications to disappear, not just the container
         await this.page
             .locator('.ant-notification-notice')
             .first()
             .waitFor({ state: 'hidden', timeout: 10000 })
             .catch(() => { });
 
-        // Extra safety: force-dismiss any lingering notifications
         const notification = this.page.locator('.ant-notification-notice');
         if (await notification.count() > 0) {
             await notification
@@ -45,7 +42,6 @@ export class LandingPage {
 
         await expect(addButton).toBeVisible();
 
-        // Use force:true as last resort if notification overlaps but button is stable
         await addButton.click({ timeout: 50000 });
     }
 
