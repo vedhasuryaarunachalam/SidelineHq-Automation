@@ -63,7 +63,7 @@ jobs:
             test-results.json
           retention-days: 30
 
-         - name: Generate Test Summary
+      - name: Generate Test Summary
         if: always()
         run: |
           node <<'EOF'
