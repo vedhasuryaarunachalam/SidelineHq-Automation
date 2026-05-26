@@ -28,12 +28,44 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      # Run tests but don't stop workflow immediately
       - name: Run Playwright tests
+        id: playwright
         run: npx playwright test
+        continue-on-error: true
 
-      - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
+      # Upload report always
+      - name: Upload Playwright Report
+        uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+
+      # Comment on PR if tests fail
+      - name: Comment PR with Playwright Report
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = `
+            ❌ Playwright tests failed.
+
+            📄 Playwright report artifact has been uploaded.
+
+            Go to:
+            Actions → This Workflow Run → Artifacts → playwright-report
+            `;
+
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });
+
+      # Fail workflow at end if tests failed
+      - name: Fail workflow if Playwright failed
+        if: steps.playwright.outcome == 'failure'
+        run: exit 1
