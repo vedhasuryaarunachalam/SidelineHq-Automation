@@ -1,0 +1,2245 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\vedha\\my-playwright-project\\playwright.config.ts",
+    "rootDir": "C:/Users/vedha/my-playwright-project/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 6
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/vedha/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 6
+        },
+        "id": "setup-chromium",
+        "name": "setup-chromium",
+        "testDir": "C:/Users/vedha/my-playwright-project/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/auth\\.setup\\.ts/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/vedha/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 6
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/vedha/my-playwright-project/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/vedha/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 6
+        },
+        "id": "setup-firefox",
+        "name": "setup-firefox",
+        "testDir": "C:/Users/vedha/my-playwright-project/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/auth\\.setup\\.ts/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/vedha/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 6
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/vedha/my-playwright-project/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/vedha/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 6
+        },
+        "id": "setup-webkit",
+        "name": "setup-webkit",
+        "testDir": "C:/Users/vedha/my-playwright-project/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/auth\\.setup\\.ts/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/vedha/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 6
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/vedha/my-playwright-project/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 6,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "auth.setup.ts",
+      "file": "auth.setup.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "authenticate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup-webkit",
+              "projectName": "setup-webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7139,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:02:51.104Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-1f738049497ae888dd11",
+          "file": "auth.setup.ts",
+          "line": 3,
+          "column": 6
+        },
+        {
+          "title": "authenticate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup-firefox",
+              "projectName": "setup-firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 6424,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:02:51.052Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-e0c971b5729970a61efc",
+          "file": "auth.setup.ts",
+          "line": 3,
+          "column": 6
+        },
+        {
+          "title": "authenticate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup-chromium",
+              "projectName": "setup-chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 5690,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:02:51.117Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-6d4e638a896c31bdc59b",
+          "file": "auth.setup.ts",
+          "line": 3,
+          "column": 6
+        }
+      ]
+    },
+    {
+      "title": "BulkUpload.test.ts",
+      "file": "BulkUpload.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Bulk Upload Tests",
+          "file": "BulkUpload.test.ts",
+          "line": 3,
+          "column": 15,
+          "specs": [
+            {
+              "title": "Navigate to Bulk Upload page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
+                        "line": 3,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:02:58.776Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
+                            "line": 3,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "440d084b59f33fadb5a5-206cd2521240a05127a3",
+              "file": "BulkUpload.test.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "Upload excel file",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
+                        "line": 3,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:02:58.776Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
+                            "line": 3,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "440d084b59f33fadb5a5-90a6a7aaaa40e23966de",
+              "file": "BulkUpload.test.ts",
+              "line": 8,
+              "column": 9
+            },
+            {
+              "title": "Navigate to Bulk Upload page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
+                        "line": 3,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:15.286Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
+                            "line": 3,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "440d084b59f33fadb5a5-a87a39a01082167b82fe",
+              "file": "BulkUpload.test.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "Upload excel file",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
+                        "line": 3,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:15.288Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
+                            "line": 3,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "440d084b59f33fadb5a5-d87597888d25889dc8cf",
+              "file": "BulkUpload.test.ts",
+              "line": 8,
+              "column": 9
+            },
+            {
+              "title": "Navigate to Bulk Upload page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
+                        "line": 3,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:43.597Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
+                            "line": 3,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "440d084b59f33fadb5a5-d035911d7230fef9238f",
+              "file": "BulkUpload.test.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "Upload excel file",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
+                        "line": 3,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:43.598Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
+                            "line": 3,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "440d084b59f33fadb5a5-e4fa95ea96e44237736b",
+              "file": "BulkUpload.test.ts",
+              "line": 8,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CheckoutEQ.test.ts",
+      "file": "CheckoutEQ.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Equipment Checkout Tests",
+          "file": "CheckoutEQ.test.ts",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Checkout equipment successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 10529,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:02:59.792Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3093ba02acc10f1322e-39e6cb14576c12c7f6b9",
+              "file": "CheckoutEQ.test.ts",
+              "line": 8,
+              "column": 9
+            },
+            {
+              "title": "Checkout equipment successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15972,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:17.064Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3093ba02acc10f1322e-9957c005fcaf4f60424c",
+              "file": "CheckoutEQ.test.ts",
+              "line": 8,
+              "column": 9
+            },
+            {
+              "title": "Checkout equipment successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 17235,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:53.070Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3093ba02acc10f1322e-3293d6573db5f8f4f39d",
+              "file": "CheckoutEQ.test.ts",
+              "line": 8,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "EquipmentAction.spec.ts",
+      "file": "EquipmentAction.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Equipment Dropdown Actions",
+          "file": "EquipmentAction.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Verify Edit dropdown action",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 8484,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:02:59.826Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef44234c8b3fd99ac64d-02088183891d38a92f45",
+              "file": "EquipmentAction.spec.ts",
+              "line": 18,
+              "column": 9
+            },
+            {
+              "title": "Verify Archive dropdown action",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 8793,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:02:59.799Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef44234c8b3fd99ac64d-c2c2acb9e273bea45292",
+              "file": "EquipmentAction.spec.ts",
+              "line": 27,
+              "column": 9
+            },
+            {
+              "title": "Verify Delete dropdown action",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 7899,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:02:59.860Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef44234c8b3fd99ac64d-b1296c4277b440cc5afd",
+              "file": "EquipmentAction.spec.ts",
+              "line": 38,
+              "column": 9
+            },
+            {
+              "title": "Verify Edit action",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9878,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:02:59.809Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef44234c8b3fd99ac64d-f55416665b4a24700ace",
+              "file": "EquipmentAction.spec.ts",
+              "line": 54,
+              "column": 9
+            },
+            {
+              "title": "Verify Edit dropdown action",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 11593,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:17.582Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef44234c8b3fd99ac64d-762dd5e9b89650f167fb",
+              "file": "EquipmentAction.spec.ts",
+              "line": 18,
+              "column": 9
+            },
+            {
+              "title": "Verify Archive dropdown action",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 10420,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:20.556Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef44234c8b3fd99ac64d-b5385e64f76db8ade96e",
+              "file": "EquipmentAction.spec.ts",
+              "line": 27,
+              "column": 9
+            },
+            {
+              "title": "Verify Delete dropdown action",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 11698,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:23.148Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef44234c8b3fd99ac64d-70a9c38e5a27f5c84e2d",
+              "file": "EquipmentAction.spec.ts",
+              "line": 38,
+              "column": 9
+            },
+            {
+              "title": "Verify Edit action",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 14096,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:23.557Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef44234c8b3fd99ac64d-1512ae304560af525ba9",
+              "file": "EquipmentAction.spec.ts",
+              "line": 54,
+              "column": 9
+            },
+            {
+              "title": "Verify Edit dropdown action",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 11348,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:58.694Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef44234c8b3fd99ac64d-6ec273d9bb2562d989cc",
+              "file": "EquipmentAction.spec.ts",
+              "line": 18,
+              "column": 9
+            },
+            {
+              "title": "Verify Archive dropdown action",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 11682,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:58.756Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef44234c8b3fd99ac64d-a377a1af9f564e17e9be",
+              "file": "EquipmentAction.spec.ts",
+              "line": 27,
+              "column": 9
+            },
+            {
+              "title": "Verify Delete dropdown action",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 10650,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:59.793Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef44234c8b3fd99ac64d-7bcbffce86f942b67261",
+              "file": "EquipmentAction.spec.ts",
+              "line": 38,
+              "column": 9
+            },
+            {
+              "title": "Verify Edit action",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 12178,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:04:01.111Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef44234c8b3fd99ac64d-41cead2860f0840ddc5a",
+              "file": "EquipmentAction.spec.ts",
+              "line": 54,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Landingpage.spec.ts",
+      "file": "Landingpage.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Add equipment with all details filled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 12535,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Add button clicked\n"
+                    },
+                    {
+                      "text": "Equipment type selected\n"
+                    },
+                    {
+                      "text": "Equipment Added toast is visible\n"
+                    },
+                    {
+                      "text": "Equipment Added Successfully\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:02:59.891Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed05aa6b7015be75db07-2551cdd62d74ba0eed1b",
+          "file": "Landingpage.spec.ts",
+          "line": 8,
+          "column": 5
+        },
+        {
+          "title": "Add equipment with only category and product id",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 5,
+                  "status": "passed",
+                  "duration": 7833,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Add button clicked\n"
+                    },
+                    {
+                      "text": "Equipment type selected\n"
+                    },
+                    {
+                      "text": " Mandatory fields entered\n"
+                    },
+                    {
+                      "text": "Equipment Added Successfully\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:03:08.021Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed05aa6b7015be75db07-379dbfa4e465e640c69e",
+          "file": "Landingpage.spec.ts",
+          "line": 32,
+          "column": 5
+        },
+        {
+          "title": "Duplicate product id should show failure toast",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 12240,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "First Equipment Added\n"
+                    },
+                    {
+                      "text": "Duplicate Product ID validation displayed\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:03:08.524Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed05aa6b7015be75db07-1398c6bddee44ac877ce",
+          "file": "Landingpage.spec.ts",
+          "line": 58,
+          "column": 5
+        },
+        {
+          "title": "Close add equipment modal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 4,
+                  "status": "passed",
+                  "duration": 5868,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Add Equipment modal opened\n"
+                    },
+                    {
+                      "text": " Add Equipment modal closed successfully\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:03:08.894Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed05aa6b7015be75db07-5ce789c5b3a790599ac3",
+          "file": "Landingpage.spec.ts",
+          "line": 88,
+          "column": 5
+        },
+        {
+          "title": "Add equipment with all details filled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 4,
+                  "status": "passed",
+                  "duration": 23902,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Add button clicked\n"
+                    },
+                    {
+                      "text": "Equipment type selected\n"
+                    },
+                    {
+                      "text": "Equipment Added toast is visible\n"
+                    },
+                    {
+                      "text": "Equipment Added Successfully\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:03:25.492Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed05aa6b7015be75db07-d2f664cda1bf1b592777",
+          "file": "Landingpage.spec.ts",
+          "line": 8,
+          "column": 5
+        },
+        {
+          "title": "Add equipment with only category and product id",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 5,
+                  "status": "passed",
+                  "duration": 12104,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Add button clicked\n"
+                    },
+                    {
+                      "text": "Equipment type selected\n"
+                    },
+                    {
+                      "text": " Mandatory fields entered\n"
+                    },
+                    {
+                      "text": "Equipment Added Successfully\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:03:31.384Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed05aa6b7015be75db07-a1f47ccfea0b3f1cb269",
+          "file": "Landingpage.spec.ts",
+          "line": 32,
+          "column": 5
+        },
+        {
+          "title": "Duplicate product id should show failure toast",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 18546,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "First Equipment Added\n"
+                    },
+                    {
+                      "text": "Duplicate Product ID validation displayed\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:03:32.688Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed05aa6b7015be75db07-1aab2f6d6b6e026759ba",
+          "file": "Landingpage.spec.ts",
+          "line": 58,
+          "column": 5
+        },
+        {
+          "title": "Close add equipment modal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8577,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Add Equipment modal opened\n"
+                    },
+                    {
+                      "text": " Add Equipment modal closed successfully\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:03:34.262Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed05aa6b7015be75db07-38799a33dc627d3ca812",
+          "file": "Landingpage.spec.ts",
+          "line": 88,
+          "column": 5
+        },
+        {
+          "title": "Add equipment with all details filled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 22151,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Add button clicked\n"
+                    },
+                    {
+                      "text": "Equipment type selected\n"
+                    },
+                    {
+                      "text": "Equipment Added toast is visible\n"
+                    },
+                    {
+                      "text": "Equipment Added Successfully\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:04:01.324Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed05aa6b7015be75db07-ec56ef48420ccd9ead22",
+          "file": "Landingpage.spec.ts",
+          "line": 8,
+          "column": 5
+        },
+        {
+          "title": "Add equipment with only category and product id",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 13590,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Add button clicked\n"
+                    },
+                    {
+                      "text": "Equipment type selected\n"
+                    },
+                    {
+                      "text": " Mandatory fields entered\n"
+                    },
+                    {
+                      "text": "Equipment Added Successfully\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:04:10.358Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed05aa6b7015be75db07-91759209d7f06ccb6883",
+          "file": "Landingpage.spec.ts",
+          "line": 32,
+          "column": 5
+        },
+        {
+          "title": "Duplicate product id should show failure toast",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 20405,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "First Equipment Added\n"
+                    },
+                    {
+                      "text": "Duplicate Product ID validation displayed\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:04:10.738Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed05aa6b7015be75db07-77d3f59f4c0d1bcec2d4",
+          "file": "Landingpage.spec.ts",
+          "line": 58,
+          "column": 5
+        },
+        {
+          "title": "Close add equipment modal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 4,
+                  "status": "passed",
+                  "duration": 9474,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Add Equipment modal opened\n"
+                    },
+                    {
+                      "text": " Add Equipment modal closed successfully\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-26T20:04:10.738Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed05aa6b7015be75db07-c3c77c6b3d6b50262c7d",
+          "file": "Landingpage.spec.ts",
+          "line": 88,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "login.spec.ts",
+      "file": "login.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Login Tests",
+          "file": "login.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Login with Valid creds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5351,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Equipment Management is visible\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:09.907Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41d3fd2474a19feb00a1-76704eb6c418293fd7e7",
+              "file": "login.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "Login with Valid creds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6884,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Equipment Management is visible\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:36.644Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41d3fd2474a19feb00a1-c007884d792acb1a4412",
+              "file": "login.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "Login with Valid creds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 7639,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Equipment Management is visible\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:04:10.861Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41d3fd2474a19feb00a1-b83249d697f4c512c417",
+              "file": "login.spec.ts",
+              "line": 15,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Non-Serialized.spec.ts",
+      "file": "Non-Serialized.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Non-Serialized Equipment Tests",
+          "file": "Non-Serialized.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Add Non-Serialized equipment with all details filled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 7145,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": " Navigated to Non-Serialized page\n"
+                        },
+                        {
+                          "text": "Add button clicked\n"
+                        },
+                        {
+                          "text": "Equipment type selected\n"
+                        },
+                        {
+                          "text": "Equipment Added toast is visible\n"
+                        },
+                        {
+                          "text": "Equipment details entered\n"
+                        },
+                        {
+                          "text": " Equipment \"Helmetouhrb\" is visible in Non-Serialized table\n"
+                        },
+                        {
+                          "text": " Non-Serialized Equipment Added Successfully\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:10.582Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a0dd580a2daaf9a84d70-5510c2e86d80fa56ee16",
+              "file": "Non-Serialized.spec.ts",
+              "line": 7,
+              "column": 9
+            },
+            {
+              "title": "Add Non-Serialized equipment with all details filled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 15320,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": " Navigated to Non-Serialized page\n"
+                        },
+                        {
+                          "text": "Add button clicked\n"
+                        },
+                        {
+                          "text": "Equipment type selected\n"
+                        },
+                        {
+                          "text": "Equipment Added toast is visible\n"
+                        },
+                        {
+                          "text": "Equipment details entered\n"
+                        },
+                        {
+                          "text": " Equipment \"Helmetacdwi\" is visible in Non-Serialized table\n"
+                        },
+                        {
+                          "text": " Non-Serialized Equipment Added Successfully\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:40.730Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a0dd580a2daaf9a84d70-cb86dcd33cb5aaca3358",
+              "file": "Non-Serialized.spec.ts",
+              "line": 7,
+              "column": 9
+            },
+            {
+              "title": "Add Non-Serialized equipment with all details filled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 13430,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": " Navigated to Non-Serialized page\n"
+                        },
+                        {
+                          "text": "Add button clicked\n"
+                        },
+                        {
+                          "text": "Equipment type selected\n"
+                        },
+                        {
+                          "text": "Equipment Added toast is visible\n"
+                        },
+                        {
+                          "text": "Equipment details entered\n"
+                        },
+                        {
+                          "text": " Equipment \"Helmetwxjsg\" is visible in Non-Serialized table\n"
+                        },
+                        {
+                          "text": " Non-Serialized Equipment Added Successfully\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:04:13.522Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a0dd580a2daaf9a84d70-ce50c474a9ca9d32763c",
+              "file": "Non-Serialized.spec.ts",
+              "line": 7,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "NonCheckoutEQ.spec.ts",
+      "file": "NonCheckoutEQ.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Equipment Checkout Tests",
+          "file": "NonCheckoutEQ.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Checkout non-serialized equipment for multiple players successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 7756,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:12.740Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "efb8f2a5a0a556e88d6c-6facf0cb9ed57dc0cf27",
+              "file": "NonCheckoutEQ.spec.ts",
+              "line": 7,
+              "column": 9
+            },
+            {
+              "title": "Checkout non-serialized equipment for multiple players successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15117,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:42.903Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "efb8f2a5a0a556e88d6c-18f11e4f293201a88587",
+              "file": "NonCheckoutEQ.spec.ts",
+              "line": 7,
+              "column": 9
+            },
+            {
+              "title": "Checkout non-serialized equipment for multiple players successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 13285,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:04:18.541Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "efb8f2a5a0a556e88d6c-550c35e910d44bbadbd4",
+              "file": "NonCheckoutEQ.spec.ts",
+              "line": 7,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "onetimecheckout.spec.ts",
+      "file": "onetimecheckout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "One-Time Checkout Equipment Tests",
+          "file": "onetimecheckout.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Add One-Time Checkout equipment with all details filled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 7939,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Equipment Added toast is visible\n"
+                        },
+                        {
+                          "text": " Equipment \"Helmetplcvt\" is visible in One-Time Checkout table\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:14.815Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee7caf98e856f9c13499-c07215ba16f329805470",
+              "file": "onetimecheckout.spec.ts",
+              "line": 4,
+              "column": 7
+            },
+            {
+              "title": "Add One-Time Checkout equipment with all details filled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 14152,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Equipment Added toast is visible\n"
+                        },
+                        {
+                          "text": " Equipment \"Helmetmcsem\" is visible in One-Time Checkout table\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:03:43.585Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee7caf98e856f9c13499-b2603630b2710c40b066",
+              "file": "onetimecheckout.spec.ts",
+              "line": 4,
+              "column": 7
+            },
+            {
+              "title": "Add One-Time Checkout equipment with all details filled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 12872,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Equipment Added toast is visible\n"
+                        },
+                        {
+                          "text": " Equipment \"Helmetscioy\" is visible in One-Time Checkout table\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-26T20:04:20.257Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee7caf98e856f9c13499-bd8af19804bc3aeaf68b",
+              "file": "onetimecheckout.spec.ts",
+              "line": 4,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-05-26T20:02:50.313Z",
+    "duration": 102912.83,
+    "expected": 42,
+    "skipped": 6,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -41,28 +41,24 @@ export class CheckoutEquipmentPage {
 
     async clickCheckoutNow() {
 
-        await this.page
-            .getByRole('button', {
-                name: 'CHECK OUT NOW'
-            })
+        const dialog = this.page.getByRole('dialog', {
+            name: 'Check-Out Equipment'
+        });
+
+        await dialog
+            .getByRole('button', { name: 'CHECK OUT NOW' })
             .click();
+
     }
 
     async verifyEquipmentAssignedToast() {
-        await expect(
-            this.page.locator('.ant-notification-notice-title', {
-                hasText: 'Equipment Assigned'
-            })
-        ).toBeVisible();
+
+        const toast = this.page.getByText('Equipment Assigned');
+
+        await expect(toast).toHaveText('Equipment Assigned', { timeout: 20000 });
     }
-    async navigateToNonserializedEquipment() {
-        await this.page.getByRole('tab', {
-            name: 'Non-Serialized'
-        }).click();
-
-    }
-
-
-
-
 }
+
+
+
+
