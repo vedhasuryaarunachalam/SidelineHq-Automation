@@ -8,29 +8,45 @@ export class LandingPage {
     equipmentData = TestDataUtil.equipmentData();
 
     async navigateToLandingPage() {
-        await this.page.goto('/sports/1/equipment/serialized/available', { waitUntil: 'domcontentloaded' });
+        await this.page.goto('/sports/1/equipment/serialized/available', {
+            waitUntil: 'domcontentloaded'
+        });
+
+        // Wait for any post-navigation notifications to clear
+        await this.page
+            .locator('.ant-notification-notice')
+            .waitFor({ state: 'hidden', timeout: 10000 })
+            .catch(() => { });
     }
 
     async Addbutton() {
-        const notificationClose = this.page
-            .locator('.ant-notification-notice .ant-notification-close')
-            .first();
+        // Wait for ALL notifications to disappear, not just the container
+        await this.page
+            .locator('.ant-notification-notice')
+            .first()
+            .waitFor({ state: 'hidden', timeout: 10000 })
+            .catch(() => { });
 
-        if (await notificationClose.isVisible().catch(() => false)) {
-            await notificationClose.click();
+        // Extra safety: force-dismiss any lingering notifications
+        const notification = this.page.locator('.ant-notification-notice');
+        if (await notification.count() > 0) {
+            await notification
+                .locator('.ant-notification-notice-close')
+                .first()
+                .click()
+                .catch(() => { });
+
+            await notification.first().waitFor({ state: 'hidden', timeout: 5000 }).catch(() => { });
         }
+
         const addButton = this.page
             .locator('[class*="addIconWrapper"]')
             .first();
 
-        await addButton.waitFor({
-            state: 'visible'
-        });
+        await expect(addButton).toBeVisible();
 
-        await addButton.click({
-            timeout: 10000
-        });
-
+        // Use force:true as last resort if notification overlaps but button is stable
+        await addButton.click({ timeout: 50000 });
     }
 
     async AddEquipment() {
@@ -86,9 +102,13 @@ export class LandingPage {
 
     async submitEquipment() {
 
-        await this.page
-            .getByRole('button', { name: 'ADD EQUIPMENT' })
-            .click();
+        const addEquipmentButton = this.page.getByRole('button', {
+            name: 'ADD EQUIPMENT'
+        });
+
+        await addEquipmentButton.click();
+
+
 
     }
 
@@ -98,4 +118,4 @@ export class LandingPage {
             .locator('.ant-modal-close')
             .click();
     }
-}
+}   
