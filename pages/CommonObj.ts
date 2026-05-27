@@ -6,40 +6,61 @@ export class CommonPage {
 
     async clickAddButton() {
 
-        const addButton = this.page
-            .locator('[class*="addIconWrapper"]')
-            .first();
+    await this.waitForNotificationsToClear();
 
-        await expect(addButton).toBeVisible();
+    const addButton = this.page
+        .locator('[class*="addIconWrapper"]')
+        .first();
 
-        await addButton.click({ timeout: 50000 });
-    }
+    await expect(addButton).toBeVisible({
+        timeout: 15000
+    });
+
+    await expect(addButton).toBeEnabled();
+
+    await addButton.click();
+}
 
     async waitForNotificationsToClear() {
 
-        const notification = this.page.locator('.ant-notification-notice');
+        const notification = this.page.locator('.ant-notification-notice').first();
 
-        await notification.first().waitFor({
-            state: 'hidden',
-            timeout: 10000
-        }).catch(() => { });
+        if (await notification.isVisible().catch(() => false)) {
+            try {
+                await notification.waitFor({
+                    state: 'hidden',
+                    timeout: 10000,
+                });
+            } catch {
+                // If notification is still visible after 10s, close it manually
+                const closeButton = notification.locator(
+                    '.ant-notification-notice-close'
+                );
+
+                if (await closeButton.isVisible().catch(() => false)) {
+                    await closeButton.click();
+                }
+            }
+        }
     }
     async navigate() {
-        await this.page.goto(
-            '/sports/1/equipment/serialized/available',
-            {
-                waitUntil: 'domcontentloaded'
-            }
-        );
 
-        await this.waitForNotificationsToClear();
-    }
+    await this.page.goto(
+        '/sports/1/equipment/serialized/available',
+        {
+            waitUntil: 'networkidle'
+        }
+    );
+
+    await this.waitForNotificationsToClear();
+}
     async SuccessToast() {
 
-    const successMessage = this.page.getByText('Equipment Added');
+        const successMessage = this.page.getByText('Equipment Added');
 
-    await expect(successMessage).toBeVisible({ timeout: 10000 });
-
-    console.log('Equipment Added toast is visible');
-}
+        await expect(
+            this.page.locator('.ant-notification-notice')
+        ).toContainText('Equipment Added');
+        console.log('Equipment Added toast is visible');
+    }
 }

@@ -11,15 +11,15 @@ test('Add equipment with all details filled', async ({ page }) => {
 
     await landingPage.navigateToLandingPage();
 
-    await landingPage.Addbutton();
+    await landingPage.clickAddButton();
 
     console.log('Add button clicked');
 
-    await landingPage.AddEquipment();
+    await landingPage.selectEquipmentType();
 
     console.log('Equipment type selected');
 
-    await landingPage.AddEquipmentDetails();
+    await landingPage.fillEquipmentDetails();
 
     await expect(
         page.locator('.ant-notification-notice-title').last()
@@ -35,11 +35,11 @@ test('Add equipment with only category and product id', async ({ page }) => {
 
     await landingPage.navigateToLandingPage();
 
-    await landingPage.Addbutton();
+    await landingPage.clickAddButton();
 
     console.log('Add button clicked');
 
-    await landingPage.AddEquipment();
+    await landingPage.selectEquipmentType();
 
     console.log('Equipment type selected');
 
@@ -62,8 +62,8 @@ test('Duplicate product id should show failure toast', async ({ page }) => {
     await landingPage.navigateToLandingPage();
 
     // First equipment creation
-    await landingPage.Addbutton();
-    await landingPage.AddEquipment();
+    await landingPage.clickAddButton();
+    await landingPage.selectEquipmentType();
     await landingPage.addOnlyMandatoryFields();
 
     await expect(
@@ -73,9 +73,8 @@ test('Duplicate product id should show failure toast', async ({ page }) => {
     console.log('First Equipment Added');
 
     // Duplicate product ID
-    await landingPage.Addbutton();
-    await landingPage.AddEquipment();
-
+    await landingPage.clickAddButton();
+    await landingPage.selectEquipmentType();
     await landingPage.addDuplicateProductId();
 
     await expect(
@@ -91,7 +90,7 @@ test('Close add equipment modal', async ({ page }) => {
 
     await landingPage.navigateToLandingPage();
 
-    await landingPage.Addbutton();
+    await landingPage.clickAddButton();
 
     console.log('Add Equipment modal opened');
 

@@ -160,12 +160,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 7139,
+                  "duration": 6616,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:02:51.104Z",
+                  "startTime": "2026-05-27T09:14:12.672Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -194,12 +194,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 6424,
+                  "duration": 6385,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:02:51.052Z",
+                  "startTime": "2026-05-27T09:14:12.649Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -228,12 +228,12 @@
                   "workerIndex": 2,
                   "parallelIndex": 2,
                   "status": "passed",
-                  "duration": 5690,
+                  "duration": 6373,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:02:51.117Z",
+                  "startTime": "2026-05-27T09:14:12.709Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -258,7 +258,7 @@
         {
           "title": "Bulk Upload Tests",
           "file": "BulkUpload.test.ts",
-          "line": 3,
+          "line": 4,
           "column": 15,
           "specs": [
             {
@@ -273,7 +273,7 @@
                       "type": "skip",
                       "location": {
                         "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
-                        "line": 3,
+                        "line": 4,
                         "column": 15
                       }
                     }
@@ -291,13 +291,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:02:58.776Z",
+                      "startTime": "2026-05-27T09:14:20.568Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
-                            "line": 3,
+                            "line": 4,
                             "column": 15
                           }
                         }
@@ -310,11 +310,11 @@
               ],
               "id": "440d084b59f33fadb5a5-206cd2521240a05127a3",
               "file": "BulkUpload.test.ts",
-              "line": 4,
+              "line": 6,
               "column": 9
             },
             {
-              "title": "Upload excel file",
+              "title": "Upload excel file successfully",
               "ok": true,
               "tags": [],
               "tests": [
@@ -325,7 +325,7 @@
                       "type": "skip",
                       "location": {
                         "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
-                        "line": 3,
+                        "line": 4,
                         "column": 15
                       }
                     }
@@ -343,13 +343,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:02:58.776Z",
+                      "startTime": "2026-05-27T09:14:20.569Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
-                            "line": 3,
+                            "line": 4,
                             "column": 15
                           }
                         }
@@ -360,9 +360,9 @@
                   "status": "skipped"
                 }
               ],
-              "id": "440d084b59f33fadb5a5-90a6a7aaaa40e23966de",
+              "id": "440d084b59f33fadb5a5-89a0b1f3410c774d991f",
               "file": "BulkUpload.test.ts",
-              "line": 8,
+              "line": 13,
               "column": 9
             },
             {
@@ -377,7 +377,7 @@
                       "type": "skip",
                       "location": {
                         "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
-                        "line": 3,
+                        "line": 4,
                         "column": 15
                       }
                     }
@@ -395,13 +395,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:15.286Z",
+                      "startTime": "2026-05-27T09:14:37.850Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
-                            "line": 3,
+                            "line": 4,
                             "column": 15
                           }
                         }
@@ -414,11 +414,11 @@
               ],
               "id": "440d084b59f33fadb5a5-a87a39a01082167b82fe",
               "file": "BulkUpload.test.ts",
-              "line": 4,
+              "line": 6,
               "column": 9
             },
             {
-              "title": "Upload excel file",
+              "title": "Upload excel file successfully",
               "ok": true,
               "tags": [],
               "tests": [
@@ -429,7 +429,7 @@
                       "type": "skip",
                       "location": {
                         "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
-                        "line": 3,
+                        "line": 4,
                         "column": 15
                       }
                     }
@@ -447,13 +447,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:15.288Z",
+                      "startTime": "2026-05-27T09:14:37.851Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
-                            "line": 3,
+                            "line": 4,
                             "column": 15
                           }
                         }
@@ -464,9 +464,9 @@
                   "status": "skipped"
                 }
               ],
-              "id": "440d084b59f33fadb5a5-d87597888d25889dc8cf",
+              "id": "440d084b59f33fadb5a5-f7ddae05a582446c1c10",
               "file": "BulkUpload.test.ts",
-              "line": 8,
+              "line": 13,
               "column": 9
             },
             {
@@ -481,7 +481,7 @@
                       "type": "skip",
                       "location": {
                         "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
-                        "line": 3,
+                        "line": 4,
                         "column": 15
                       }
                     }
@@ -499,13 +499,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:43.597Z",
+                      "startTime": "2026-05-27T09:15:06.670Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
-                            "line": 3,
+                            "line": 4,
                             "column": 15
                           }
                         }
@@ -518,11 +518,11 @@
               ],
               "id": "440d084b59f33fadb5a5-d035911d7230fef9238f",
               "file": "BulkUpload.test.ts",
-              "line": 4,
+              "line": 6,
               "column": 9
             },
             {
-              "title": "Upload excel file",
+              "title": "Upload excel file successfully",
               "ok": true,
               "tags": [],
               "tests": [
@@ -533,7 +533,7 @@
                       "type": "skip",
                       "location": {
                         "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
-                        "line": 3,
+                        "line": 4,
                         "column": 15
                       }
                     }
@@ -551,13 +551,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:43.598Z",
+                      "startTime": "2026-05-27T09:15:06.673Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
                             "file": "C:\\Users\\vedha\\my-playwright-project\\tests\\BulkUpload.test.ts",
-                            "line": 3,
+                            "line": 4,
                             "column": 15
                           }
                         }
@@ -568,9 +568,9 @@
                   "status": "skipped"
                 }
               ],
-              "id": "440d084b59f33fadb5a5-e4fa95ea96e44237736b",
+              "id": "440d084b59f33fadb5a5-2f15270e7ee875d67e03",
               "file": "BulkUpload.test.ts",
-              "line": 8,
+              "line": 13,
               "column": 9
             }
           ]
@@ -606,12 +606,12 @@
                       "workerIndex": 3,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 10529,
+                      "duration": 9150,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:02:59.792Z",
+                      "startTime": "2026-05-27T09:14:21.766Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -638,14 +638,14 @@
                   "results": [
                     {
                       "workerIndex": 9,
-                      "parallelIndex": 0,
+                      "parallelIndex": 5,
                       "status": "passed",
-                      "duration": 15972,
+                      "duration": 13208,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:17.064Z",
+                      "startTime": "2026-05-27T09:14:38.889Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -674,12 +674,12 @@
                       "workerIndex": 15,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 17235,
+                      "duration": 14551,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:53.070Z",
+                      "startTime": "2026-05-27T09:15:10.539Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -725,12 +725,12 @@
                       "workerIndex": 4,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 8484,
+                      "duration": 9368,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:02:59.826Z",
+                      "startTime": "2026-05-27T09:14:21.697Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -759,12 +759,12 @@
                       "workerIndex": 5,
                       "parallelIndex": 4,
                       "status": "passed",
-                      "duration": 8793,
+                      "duration": 9066,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:02:59.799Z",
+                      "startTime": "2026-05-27T09:14:21.686Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -793,12 +793,12 @@
                       "workerIndex": 6,
                       "parallelIndex": 5,
                       "status": "passed",
-                      "duration": 7899,
+                      "duration": 8536,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:02:59.860Z",
+                      "startTime": "2026-05-27T09:14:21.738Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -827,12 +827,12 @@
                       "workerIndex": 7,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9878,
+                      "duration": 10024,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:02:59.809Z",
+                      "startTime": "2026-05-27T09:14:21.795Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -859,14 +859,14 @@
                   "results": [
                     {
                       "workerIndex": 10,
-                      "parallelIndex": 5,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 11593,
+                      "duration": 11315,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:17.582Z",
+                      "startTime": "2026-05-27T09:14:42.626Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -892,15 +892,15 @@
                   "projectName": "firefox",
                   "results": [
                     {
-                      "workerIndex": 11,
-                      "parallelIndex": 2,
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 10420,
+                      "duration": 10139,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:20.556Z",
+                      "startTime": "2026-05-27T09:14:43.647Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -926,15 +926,15 @@
                   "projectName": "firefox",
                   "results": [
                     {
-                      "workerIndex": 12,
-                      "parallelIndex": 1,
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11698,
+                      "duration": 10623,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:23.148Z",
+                      "startTime": "2026-05-27T09:14:43.531Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -963,12 +963,12 @@
                       "workerIndex": 13,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 14096,
+                      "duration": 16009,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:23.557Z",
+                      "startTime": "2026-05-27T09:14:48.734Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -995,14 +995,14 @@
                   "results": [
                     {
                       "workerIndex": 16,
-                      "parallelIndex": 2,
+                      "parallelIndex": 4,
                       "status": "passed",
-                      "duration": 11348,
+                      "duration": 10052,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:58.694Z",
+                      "startTime": "2026-05-27T09:15:18.134Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1029,14 +1029,14 @@
                   "results": [
                     {
                       "workerIndex": 17,
-                      "parallelIndex": 4,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 11682,
+                      "duration": 8785,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:58.756Z",
+                      "startTime": "2026-05-27T09:15:19.911Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1063,14 +1063,14 @@
                   "results": [
                     {
                       "workerIndex": 18,
-                      "parallelIndex": 3,
+                      "parallelIndex": 5,
                       "status": "passed",
-                      "duration": 10650,
+                      "duration": 9588,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:59.793Z",
+                      "startTime": "2026-05-27T09:15:21.855Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1097,14 +1097,14 @@
                   "results": [
                     {
                       "workerIndex": 19,
-                      "parallelIndex": 5,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12178,
+                      "duration": 13340,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:04:01.111Z",
+                      "startTime": "2026-05-27T09:15:22.504Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1143,7 +1143,7 @@
                   "workerIndex": 8,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 12535,
+                  "duration": 11924,
                   "errors": [],
                   "stdout": [
                     {
@@ -1161,7 +1161,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:02:59.891Z",
+                  "startTime": "2026-05-27T09:14:21.869Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1190,7 +1190,7 @@
                   "workerIndex": 6,
                   "parallelIndex": 5,
                   "status": "passed",
-                  "duration": 7833,
+                  "duration": 7270,
                   "errors": [],
                   "stdout": [
                     {
@@ -1208,7 +1208,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:03:08.021Z",
+                  "startTime": "2026-05-27T09:14:30.567Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1234,10 +1234,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 4,
-                  "parallelIndex": 3,
+                  "workerIndex": 5,
+                  "parallelIndex": 4,
                   "status": "passed",
-                  "duration": 12240,
+                  "duration": 16311,
                   "errors": [],
                   "stdout": [
                     {
@@ -1249,7 +1249,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:03:08.524Z",
+                  "startTime": "2026-05-27T09:14:31.100Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1275,10 +1275,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 5,
-                  "parallelIndex": 4,
+                  "workerIndex": 3,
+                  "parallelIndex": 2,
                   "status": "passed",
-                  "duration": 5868,
+                  "duration": 8354,
                   "errors": [],
                   "stdout": [
                     {
@@ -1290,7 +1290,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:03:08.894Z",
+                  "startTime": "2026-05-27T09:14:31.276Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1300,7 +1300,7 @@
           ],
           "id": "ed05aa6b7015be75db07-5ce789c5b3a790599ac3",
           "file": "Landingpage.spec.ts",
-          "line": 88,
+          "line": 87,
           "column": 5
         },
         {
@@ -1319,7 +1319,7 @@
                   "workerIndex": 14,
                   "parallelIndex": 4,
                   "status": "passed",
-                  "duration": 23902,
+                  "duration": 21194,
                   "errors": [],
                   "stdout": [
                     {
@@ -1337,7 +1337,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:03:25.492Z",
+                  "startTime": "2026-05-27T09:14:50.118Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1363,10 +1363,10 @@
               "projectName": "firefox",
               "results": [
                 {
-                  "workerIndex": 10,
+                  "workerIndex": 9,
                   "parallelIndex": 5,
                   "status": "passed",
-                  "duration": 12104,
+                  "duration": 11544,
                   "errors": [],
                   "stdout": [
                     {
@@ -1384,7 +1384,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:03:31.384Z",
+                  "startTime": "2026-05-27T09:14:54.348Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1410,10 +1410,10 @@
               "projectName": "firefox",
               "results": [
                 {
-                  "workerIndex": 11,
+                  "workerIndex": 10,
                   "parallelIndex": 2,
                   "status": "passed",
-                  "duration": 18546,
+                  "duration": 20291,
                   "errors": [],
                   "stdout": [
                     {
@@ -1425,7 +1425,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:03:32.688Z",
+                  "startTime": "2026-05-27T09:14:55.270Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1451,10 +1451,10 @@
               "projectName": "firefox",
               "results": [
                 {
-                  "workerIndex": 9,
+                  "workerIndex": 11,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 8577,
+                  "duration": 9664,
                   "errors": [],
                   "stdout": [
                     {
@@ -1466,7 +1466,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:03:34.262Z",
+                  "startTime": "2026-05-27T09:14:55.540Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1476,7 +1476,7 @@
           ],
           "id": "ed05aa6b7015be75db07-38799a33dc627d3ca812",
           "file": "Landingpage.spec.ts",
-          "line": 88,
+          "line": 87,
           "column": 5
         },
         {
@@ -1493,9 +1493,9 @@
               "results": [
                 {
                   "workerIndex": 20,
-                  "parallelIndex": 0,
+                  "parallelIndex": 3,
                   "status": "passed",
-                  "duration": 22151,
+                  "duration": 22945,
                   "errors": [],
                   "stdout": [
                     {
@@ -1513,7 +1513,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:04:01.324Z",
+                  "startTime": "2026-05-27T09:15:23.673Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1539,10 +1539,10 @@
               "projectName": "webkit",
               "results": [
                 {
-                  "workerIndex": 16,
-                  "parallelIndex": 2,
+                  "workerIndex": 15,
+                  "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 13590,
+                  "duration": 13893,
                   "errors": [],
                   "stdout": [
                     {
@@ -1560,7 +1560,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:04:10.358Z",
+                  "startTime": "2026-05-27T09:15:25.402Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1586,10 +1586,10 @@
               "projectName": "webkit",
               "results": [
                 {
-                  "workerIndex": 18,
-                  "parallelIndex": 3,
+                  "workerIndex": 16,
+                  "parallelIndex": 4,
                   "status": "passed",
-                  "duration": 20405,
+                  "duration": 22128,
                   "errors": [],
                   "stdout": [
                     {
@@ -1601,7 +1601,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:04:10.738Z",
+                  "startTime": "2026-05-27T09:15:28.583Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1628,9 +1628,9 @@
               "results": [
                 {
                   "workerIndex": 17,
-                  "parallelIndex": 4,
+                  "parallelIndex": 2,
                   "status": "passed",
-                  "duration": 9474,
+                  "duration": 11330,
                   "errors": [],
                   "stdout": [
                     {
@@ -1642,7 +1642,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-26T20:04:10.738Z",
+                  "startTime": "2026-05-27T09:15:28.962Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1652,7 +1652,7 @@
           ],
           "id": "ed05aa6b7015be75db07-c3c77c6b3d6b50262c7d",
           "file": "Landingpage.spec.ts",
-          "line": 88,
+          "line": 87,
           "column": 5
         }
       ]
@@ -1683,10 +1683,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 0,
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 5351,
+                      "duration": 5961,
                       "errors": [],
                       "stdout": [
                         {
@@ -1695,7 +1695,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:09.907Z",
+                      "startTime": "2026-05-27T09:14:31.389Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1724,7 +1724,7 @@
                       "workerIndex": 12,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 6884,
+                      "duration": 9993,
                       "errors": [],
                       "stdout": [
                         {
@@ -1733,7 +1733,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:36.644Z",
+                      "startTime": "2026-05-27T09:14:56.628Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1759,10 +1759,10 @@
                   "projectName": "webkit",
                   "results": [
                     {
-                      "workerIndex": 15,
-                      "parallelIndex": 1,
+                      "workerIndex": 18,
+                      "parallelIndex": 5,
                       "status": "passed",
-                      "duration": 7639,
+                      "duration": 9045,
                       "errors": [],
                       "stdout": [
                         {
@@ -1771,7 +1771,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:04:10.861Z",
+                      "startTime": "2026-05-27T09:15:31.644Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1814,10 +1814,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 2,
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7145,
+                      "duration": 9497,
                       "errors": [],
                       "stdout": [
                         {
@@ -1836,7 +1836,7 @@
                           "text": "Equipment details entered\n"
                         },
                         {
-                          "text": " Equipment \"Helmetouhrb\" is visible in Non-Serialized table\n"
+                          "text": " Equipment \"Helmetdryia\" is visible in Non-Serialized table\n"
                         },
                         {
                           "text": " Non-Serialized Equipment Added Successfully\n"
@@ -1844,7 +1844,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:10.582Z",
+                      "startTime": "2026-05-27T09:14:32.126Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1870,10 +1870,10 @@
                   "projectName": "firefox",
                   "results": [
                     {
-                      "workerIndex": 13,
-                      "parallelIndex": 3,
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 15320,
+                      "duration": 14433,
                       "errors": [],
                       "stdout": [
                         {
@@ -1892,7 +1892,7 @@
                           "text": "Equipment details entered\n"
                         },
                         {
-                          "text": " Equipment \"Helmetacdwi\" is visible in Non-Serialized table\n"
+                          "text": " Equipment \"Helmetgtvqg\" is visible in Non-Serialized table\n"
                         },
                         {
                           "text": " Non-Serialized Equipment Added Successfully\n"
@@ -1900,7 +1900,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:40.730Z",
+                      "startTime": "2026-05-27T09:15:05.280Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1927,9 +1927,9 @@
                   "results": [
                     {
                       "workerIndex": 19,
-                      "parallelIndex": 5,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13430,
+                      "duration": 13974,
                       "errors": [],
                       "stdout": [
                         {
@@ -1948,7 +1948,7 @@
                           "text": "Equipment details entered\n"
                         },
                         {
-                          "text": " Equipment \"Helmetwxjsg\" is visible in Non-Serialized table\n"
+                          "text": " Equipment \"Helmetaiiuc\" is visible in Non-Serialized table\n"
                         },
                         {
                           "text": " Non-Serialized Equipment Added Successfully\n"
@@ -1956,7 +1956,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:04:13.522Z",
+                      "startTime": "2026-05-27T09:15:36.099Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2002,12 +2002,12 @@
                       "workerIndex": 8,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 7756,
+                      "duration": 7393,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:12.740Z",
+                      "startTime": "2026-05-27T09:14:34.212Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2034,14 +2034,14 @@
                   "results": [
                     {
                       "workerIndex": 9,
-                      "parallelIndex": 0,
+                      "parallelIndex": 5,
                       "status": "passed",
-                      "duration": 15117,
+                      "duration": 13200,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:42.903Z",
+                      "startTime": "2026-05-27T09:15:05.943Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2070,12 +2070,12 @@
                       "workerIndex": 15,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 13285,
+                      "duration": 12472,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:04:18.541Z",
+                      "startTime": "2026-05-27T09:15:39.333Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2118,22 +2118,22 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "parallelIndex": 4,
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 7939,
+                      "duration": 8470,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "Equipment Added toast is visible\n"
                         },
                         {
-                          "text": " Equipment \"Helmetplcvt\" is visible in One-Time Checkout table\n"
+                          "text": " Equipment \"Helmetezgdz\" is visible in One-Time Checkout table\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:14.815Z",
+                      "startTime": "2026-05-27T09:14:37.386Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2159,22 +2159,22 @@
                   "projectName": "firefox",
                   "results": [
                     {
-                      "workerIndex": 10,
-                      "parallelIndex": 5,
+                      "workerIndex": 13,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 14152,
+                      "duration": 13900,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "Equipment Added toast is visible\n"
                         },
                         {
-                          "text": " Equipment \"Helmetmcsem\" is visible in One-Time Checkout table\n"
+                          "text": " Equipment \"Helmetoswep\" is visible in One-Time Checkout table\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:03:43.585Z",
+                      "startTime": "2026-05-27T09:15:06.501Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2201,21 +2201,21 @@
                   "results": [
                     {
                       "workerIndex": 17,
-                      "parallelIndex": 4,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 12872,
+                      "duration": 13026,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "Equipment Added toast is visible\n"
                         },
                         {
-                          "text": " Equipment \"Helmetscioy\" is visible in One-Time Checkout table\n"
+                          "text": " Equipment \"Helmetcgdqx\" is visible in One-Time Checkout table\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-26T20:04:20.257Z",
+                      "startTime": "2026-05-27T09:15:40.338Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2235,8 +2235,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-05-26T20:02:50.313Z",
-    "duration": 102912.83,
+    "startTime": "2026-05-27T09:14:11.649Z",
+    "duration": 101853.934,
     "expected": 42,
     "skipped": 6,
     "unexpected": 0,
