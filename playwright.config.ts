@@ -23,6 +23,7 @@ export default defineConfig({
 
     trace: 'on-first-retry',
   },
+      
 
   projects: [
     {

@@ -100,5 +100,5 @@ test('Close add equipment modal', async ({ page }) => {
         page.getByRole('button', { name: 'ADD EQUIPMENT' })
     ).not.toBeVisible();
 
-    console.log(' Add Equipment modal closed successfully');
+    console.log(' Add Equipment modal closed ');
 });
