@@ -73,7 +73,7 @@ export class LandingPage extends CommonPage {
             .click();
 
         const yearPicker = this.page.locator(
-            '.ant-picker-dropdown:visible'
+            '.ant-picker-dropdown'
         );
 
         await yearPicker
@@ -90,7 +90,7 @@ export class LandingPage extends CommonPage {
         );
 
         await datePicker
-            .locator('.ant-picker-cell[title="2026-05-26"]')
+            .locator('.ant-picker-cell[title="2026-06-10"]')
             .click();
 
         // Remaining fields

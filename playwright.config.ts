@@ -43,7 +43,7 @@ export default defineConfig({
       dependencies: ['setup-chromium'],
     },
 
-    {
+   /* {
       name: 'setup-firefox',
       testMatch: /auth\.setup\.ts/,
       use: {
@@ -75,6 +75,6 @@ export default defineConfig({
         storageState: 'playwright/.auth/webkit.json',
       },
       dependencies: ['setup-webkit'],
-    },
+    },*/
   ],
 });
