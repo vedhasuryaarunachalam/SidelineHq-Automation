@@ -70,15 +70,9 @@ export class LandingPage extends CommonPage {
         // Year picker
         await this.page
             .getByPlaceholder('Enter year')
-            .click();
+            .fill('2026');
 
-        const yearPicker = this.page.locator(
-            '.ant-picker-dropdown'
-        );
 
-        await yearPicker
-            .getByText('2026', { exact: true })
-            .click();
 
         // Date picker
         await this.page
@@ -86,12 +80,14 @@ export class LandingPage extends CommonPage {
             .click();
 
         const datePicker = this.page.locator(
-            '.ant-picker-dropdown:visible'
+            '.ant-picker-cell.ant-picker-cell-in-view.ant-picker-cell-today'
         );
 
-        await datePicker
-            .locator('.ant-picker-cell[title="2026-06-10"]')
-            .click();
+       const today = new Date().toISOString().split('T')[0];
+
+await this.page
+    .locator(`.ant-picker-cell[title="${today}"]`)
+    .click();
 
         // Remaining fields
         await this.page
