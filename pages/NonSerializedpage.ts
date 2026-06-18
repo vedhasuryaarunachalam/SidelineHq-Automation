@@ -60,6 +60,7 @@ export class NonSerializedPage extends CommonPage {
       this.page.getByRole('tabpanel',{ name: 'Non-Serialized' })
     ).toBeVisible();
 
+
     const equipmentRow = this.page
       .getByRole('row')
       .filter({
@@ -69,7 +70,7 @@ export class NonSerializedPage extends CommonPage {
     await expect(equipmentRow).toBeVisible();
 
     console.log(
-      'Equipment "${this.equipmentData.category}" is visible in Non-Serialized table'
+      ` Equipment "${this.equipmentData.category}" is visible in Non-Serialized table`
     );
   }
 }

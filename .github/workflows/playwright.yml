@@ -2,70 +2,38 @@ name: Playwright Tests
 
 on:
   push:
-    branches: [ main, master ]
-
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
 
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
 
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
 
-      - name: Install dependencies
-        run: npm ci
+      - run: npm ci
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+      - name: Cache Playwright Browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
-      # Run tests but don't stop workflow immediately
+      - name: Install Chromium
+        run: npx playwright install chromium --with-deps
+
       - name: Run Playwright tests
-        id: playwright
         run: npx playwright test
-        continue-on-error: true
 
-      # Upload report always
-      - name: Upload Playwright Report
-        uses: actions/upload-artifact@v4
-        if: always()
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 30
-
-      # Comment on PR if tests fail
-      - name: Comment PR with Playwright Report
-        if: failure() && github.event_name == 'pull_request'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const body = `
-            ❌ Playwright tests failed.
-
-            📄 Playwright report artifact has been uploaded.
-
-            Go to:
-            Actions → This Workflow Run → Artifacts → playwright-report
-            `;
-
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-              body
-            });
-
-      # Fail workflow at end if tests failed
-      - name: Fail workflow if Playwright failed
-        if: steps.playwright.outcome == 'failure'
-        run: exit 1

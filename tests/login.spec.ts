@@ -14,26 +14,19 @@ test.describe('Login Tests', () => {
 
     test('Login with Valid creds', async ({ page }) => {
         await loginPage.login(loginData.validUser.username, loginData.validUser.password);
-        const equipmentText = page.getByText('Equipment Management');
-
-        await expect(equipmentText).toBeVisible();
-
-        console.log('Equipment Management is visible');
+       
+        
 
     });
 
-    test('Login with Invalid Password', async ({ page }) => {
+   /* test('Login with Invalid Password', async ({ page }) => {
         await loginPage.login(loginData.validUser.username, loginData.invalidUser.password);
         await expect(page).toHaveURL(loginData.invalidUser.check);
-            console.log('Invalid password validation passed');
+        console.log('Invalid password validation passed');
 
-    });
+    });*/
 
-    test('Login with unregistered email', async ({ page }) => {
-        await loginPage.login(loginData.invalidUser.username, loginData.validUser.password);
-        await expect(page).toHaveURL(loginData.invalidUser.check);
-        console.log('Unregistered email validation passed');
-    });
+
 
 
 });

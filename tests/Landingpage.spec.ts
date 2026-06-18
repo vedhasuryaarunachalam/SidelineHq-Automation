@@ -2,107 +2,103 @@ import { test, expect } from '@playwright/test';
 import { LandingPage } from '../pages/Landingpage';
 
 test.describe('Landing Page Tests', () => {
-   
-    });
 
-    test('Add equipment with all details filled', async ({ page }) => {
+});
 
-        const landingPage = new LandingPage(page);
+test('Add equipment with all details filled', async ({ page }) => {
 
-        await landingPage.navigateToLandingPage();
+    const landingPage = new LandingPage(page);
 
-        await landingPage.Addbutton();
+    await landingPage.navigateToLandingPage();
 
-        console.log('Add button clicked');
+    await landingPage.clickAddButton();
 
-        await landingPage.AddEquipment();
+    console.log('Add button clicked');
 
-        console.log('Equipment type selected');
+    await landingPage.selectEquipmentType();
 
-        await landingPage.AddEquipmentDetails();
+    console.log('Equipment type selected');
 
-        await expect(
-            page.locator('.ant-notification-notice-title').last()
-        ).toContainText('Equipment Added');
+    await landingPage.fillEquipmentDetails();
 
-        console.log('Equipment Added Successfully');
-    });
+    await expect(
+        page.locator('.ant-notification-notice-title').last()
+    ).toContainText('Equipment Added');
+
+    console.log('Equipment Added Successfully');
+});
 
 
-    test('Add equipment with only category and product id', async ({ page }) => {
+test('Add equipment with only category and product id', async ({ page }) => {
 
-        const landingPage = new LandingPage(page);
+    const landingPage = new LandingPage(page);
 
-        await landingPage.navigateToLandingPage();
+    await landingPage.navigateToLandingPage();
 
-        await landingPage.Addbutton();
+    await landingPage.clickAddButton();
 
-        console.log('Add button clicked');
+    console.log('Add button clicked');
 
-        await landingPage.AddEquipment();
+    await landingPage.selectEquipmentType();
 
-        console.log('Equipment type selected');
+    console.log('Equipment type selected');
 
-        await landingPage.addOnlyMandatoryFields();
+    await landingPage.addOnlyMandatoryFields();
 
-        console.log(' Mandatory fields entered');
+    console.log(' Mandatory fields entered');
 
-        await landingPage.submitEquipment();
 
-        await expect(
-            page.locator('.ant-notification-notice-title').last()
-        ).toContainText('Equipment Added');
+    await expect(
+        page.locator('.ant-notification-notice-title').last()
+    ).toContainText('Equipment Added');
 
-        console.log('Equipment Added Successfully');
-    });
+    console.log('Equipment Added Successfully');
+});
 
-    test('Duplicate product id should show failure toast', async ({ page }) => {
+test('Duplicate product id should show failure toast', async ({ page }) => {
 
-        const landingPage = new LandingPage(page);
+    const landingPage = new LandingPage(page);
 
-        await landingPage.navigateToLandingPage();
+    await landingPage.navigateToLandingPage();
 
-        // First equipment creation
-        await landingPage.Addbutton();
-        await landingPage.AddEquipment();
-        await landingPage.addOnlyMandatoryFields();
-        await landingPage.submitEquipment();
+    // First equipment creation
+    await landingPage.clickAddButton();
+    await landingPage.selectEquipmentType();
+    await landingPage.addOnlyMandatoryFields();
 
-        await expect(
-            page.locator('.ant-notification-notice-title').last()
-        ).toContainText('Equipment Added');
+    await expect(
+        page.locator('.ant-notification-notice-title').last()
+    ).toContainText('Equipment Added');
 
-        console.log('First Equipment Added');
+    console.log('First Equipment Added');
 
-        // Duplicate product ID
-        await landingPage.Addbutton();
-        await landingPage.AddEquipment();
+    // Duplicate product ID
+    await landingPage.clickAddButton();
+    await landingPage.selectEquipmentType();
+    await landingPage.addDuplicateProductId();
 
-        await landingPage.addDuplicateProductId();
-        await landingPage.submitEquipment();
+    await expect(
+        page.getByText('Product ID already exists for this sport')
+    ).toBeVisible();
 
-        await expect(
-            page.getByText('Product ID already exists for this sport')
-        ).toBeVisible();
+    console.log('Duplicate Product ID validation displayed');
+});
 
-        console.log('Duplicate Product ID validation displayed');
-    });
+test('Close add equipment modal', async ({ page }) => {
 
-    test('Close add equipment modal', async ({ page }) => {
+    const landingPage = new LandingPage(page);
 
-        const landingPage = new LandingPage(page);
+    await landingPage.navigateToLandingPage();
 
-        await landingPage.navigateToLandingPage();
+    await landingPage.clickAddButton();
 
-        await landingPage.Addbutton();
+    console.log('Add Equipment modal opened');
 
-        console.log('Add Equipment modal opened');
+    await landingPage.closeModal();
 
-        await landingPage.closeModal();
+    await expect(
+        page.getByRole('button', { name: 'ADD EQUIPMENT' })
+    ).not.toBeVisible();
 
-        await expect(
-            page.getByRole('button', { name: 'ADD EQUIPMENT' })
-        ).not.toBeVisible();
-
-        console.log(' Add Equipment modal closed successfully');
-    });
+    console.log(' Add Equipment modal closed ');
+});

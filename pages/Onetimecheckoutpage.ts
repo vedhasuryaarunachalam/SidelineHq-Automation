@@ -63,7 +63,7 @@ export class OnetimecheckoutPage extends CommonPage {
     await expect(equipmentRow).toBeVisible();
 
     console.log(
-      'Equipment "${this.equipmentData.category}" is visible in One-Time Checkout table'
+      ` Equipment "${this.equipmentData.category}" is visible in One-Time Checkout table`
     );
   }
 

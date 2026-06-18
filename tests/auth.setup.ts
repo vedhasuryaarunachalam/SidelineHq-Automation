@@ -4,9 +4,9 @@ setup('authenticate', async ({ page, browserName }) => {
 
   await page.goto('/login');
 
-  await page.locator('#email').fill('vedhasurya018@gmail.com');
+  await page.locator('input[id="email"]').fill('Khan@yopmail.com');
 
-  await page.locator('#password').fill('Pass@123');
+  await page.locator('input[id="password"]').fill('Test@123');
 
   await Promise.all([
     page.waitForURL('https://marine-turquoise-coyote.rootquotient.revolte.io/sports/1/equipment/serialized/available'),
