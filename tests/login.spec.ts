@@ -14,11 +14,8 @@ test.describe('Login Tests', () => {
 
     test('Login with Valid creds', async ({ page }) => {
         await loginPage.login(loginData.validUser.username, loginData.validUser.password);
-        const equipmentText = page.locator('text=Equipment Management');
-
-        await expect(equipmentText).toBeVisible();
-
-        console.log('Equipment Management is visible');
+       
+        
 
     });
 

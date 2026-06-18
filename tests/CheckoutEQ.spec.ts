@@ -1,4 +1,3 @@
-// tests/CheckoutEquipment.spec.ts
 
 import { test } from '@playwright/test';
 import { CheckoutEquipmentPage } from '../pages/CheckoutEQ';

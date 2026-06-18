@@ -1,8 +1,8 @@
-/*import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { SubscriptionPage } from '../pages/SubscriptionPage';
 import { StripePaymentPage } from '../pages/StripePaymentPage';
 
-test('Verify subscription payment using Stripe', async ({ page }) => {
+test.skip('Verify subscription payment using Stripe', async ({ page }) => {
 
     const subscriptionPage = new SubscriptionPage(page);
 
@@ -22,4 +22,3 @@ test('Verify subscription payment using Stripe', async ({ page }) => {
     await stripePaymentPage.makePayment();
 });
 
-*/
