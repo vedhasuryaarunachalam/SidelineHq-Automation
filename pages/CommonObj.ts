@@ -46,7 +46,7 @@ export class CommonPage {
     async navigate() {
 
     await this.page.goto(
-        '/sports/1/equipment/serialized/available',
+        'https://magnetic-tan-crawdad.sidelinehq.revolte.io/sports/1/equipment/serialized/available',
         {
             waitUntil: 'networkidle'
         }

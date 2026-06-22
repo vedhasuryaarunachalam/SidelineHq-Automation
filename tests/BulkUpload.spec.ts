@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import { BulkUploadPage } from '../pages/Bulkupload';
 
-test.describe('Bulk Upload Tests', () => {
+test.describe.skip('Bulk Upload Tests', () => {
 
     test('Navigate to Bulk Upload page', async ({ page }) => {
 

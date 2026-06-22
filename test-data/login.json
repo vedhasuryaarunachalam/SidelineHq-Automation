@@ -2,11 +2,11 @@
     "validUser": {
         "username": "mathew12@yopmail.com",
         "password": "Pass@123",
-        "Landingpage": "https://marine-turquoise-coyote.rootquotient.revolte.io/sports/1/equipment/serialized/available"
+        "Landingpage": "https://magnetic-tan-crawdad.sidelinehq.revolte.io/sports/1/equipment/serialized/available"
     },
     "invalidUser": {
         "username": "superadmin@example1.com",
         "password": "Test@1234",
-        "check": "https://marine-turquoise-coyote.rootquotient.revolte.io/auth/login"
+        "check": "https://magnetic-tan-crawdad.sidelinehq.revolte.io/auth/login"
     }
 }
