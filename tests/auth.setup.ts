@@ -4,17 +4,17 @@ setup('authenticate', async ({ page, browserName }) => {
 
   await page.goto('/login');
 
-  await page.locator('input[id="email"]').fill('Khan@yopmail.com');
+  await page.locator('input[id="email"]').fill('testuat@yopmail.com');
 
-  await page.locator('input[id="password"]').fill('Test@123');
+  await page.locator('input[id="password"]').fill('Pass@123');
 
   await Promise.all([
-    page.waitForURL('https://marine-turquoise-coyote.rootquotient.revolte.io/sports/1/equipment/serialized/available'),
+    page.waitForURL('https://magnetic-tan-crawdad.sidelinehq.revolte.io/sports/1/equipment/serialized/available'),
     page.getByRole('button', { name: 'Login' }).click(),
   ]);
 
   await expect(page).toHaveURL(
-    'https://marine-turquoise-coyote.rootquotient.revolte.io/sports/1/equipment/serialized/available'
+    'https://magnetic-tan-crawdad.sidelinehq.revolte.io/sports/1/equipment/serialized/available'
   );
 
   await page.context().storageState({

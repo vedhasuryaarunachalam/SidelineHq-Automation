@@ -14,7 +14,7 @@ export default defineConfig({
   reporter: 'html',
 
   use: {
-    baseURL: 'https://marine-turquoise-coyote.rootquotient.revolte.io/',
+    baseURL: 'https://magnetic-tan-crawdad.sidelinehq.revolte.io/',
 
     viewport: {
       width: 1920,
